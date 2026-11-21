@@ -1,0 +1,849 @@
+\documentclass [a4paper,fleqn] {cas-dc}
+
+\usepackage{amsmath,bm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{booktabs,tabularx,array}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[authoryear]{natbib}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,backgrounds}
+\usepackage{stfloats}
+\usepackage{placeins}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{8pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\setlength{\@dblfptop}{0pt}
+\setlength{\@dblfpsep}{8pt}
+\setlength{\@dblfpbot}{0pt plus 1fil}
+\makeatother
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\dblfloatpagefraction}{0.85}
+\setlength{\emergencystretch}{1em}
+% Keep Elsevier floats close to the paragraph that discusses them while
+% retaining enough separation for a clear visual boundary.
+\setlength{\textfloatsep}{9pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{9pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\hypersetup{hypertexnames=false}
+
+% Compatibility wrapper: retain the standard Elsevier abstract environment
+% while writing its body safely for current LaTeX releases.
+\ExplSyntaxOn
+% CAS uses key-value float options; explicitly support standard [h] syntax.
+\keys_define:nn { cas / fig }
+  { h .meta:n = { pos=h } }
+\iow_new:N \g_manuscript_abstract_iow
+\RenewDocumentEnvironment{abstract}{+b}
+  {
+    \iow_open:Nn \g_manuscript_abstract_iow {\jobname.abs}
+    \iow_now:Nn \g_manuscript_abstract_iow {#1}
+    \iow_close:N \g_manuscript_abstract_iow
+  }
+  {}
+\ExplSyntaxOff
+
+\begin{document}
+
+\let\WriteBookmarks\relax
+
+\shorttitle{Graph Reinforcement Learning for Water-Energy-Food Nexus under Observation Delays}
+\shortauthors{Lyu and Tan}
+
+\title[mode=title]{Graph Reinforcement Learning for Water-Energy-Food Nexus under Observation Delays}
+
+\author[1,2]{Meilin Lyu}
+
+\author[1]{Andrew Huey Ping Tan}
+\cormark[1]
+\ead{andrew.tan@xjtlu.edu.cn}
+
+\affiliation[1]{organization={School of Intelligent Manufacturing Ecosystem, Xi'an Jiaotong-Liverpool University},
+  city={Suzhou},
+  postcode={215123},
+  country={China}}
+
+\affiliation[2]{organization={Institute of Life Course \& Medical Sciences, University of Liverpool},
+  city={Liverpool},
+  postcode={L69 7ZX},
+  country={United Kingdom}}
+
+\cortext[1]{Corresponding author.}
+
+\begin{abstract}
+Water-energy-food (WEF) system operation becomes challenging when reservoir, river, electricity, and agricultural observations are not updated in time for current decision making. This study develops a heterogeneous graph neural network combined with proximal policy optimization (GNN-PPO) for the Upper Yellow River WEF system under observation delays. The Upper Yellow River WEF system is explicitly mapped into a node-level heterogeneous graph of 24 interconnected reservoir, river, irrigation, electricity, pumping, and crop entities, enabling their physical and cross-system dependencies to be directly represented in the proposed framework. We use monthly data from 2001 to 2021 under no-delay, subsystem-delay, and node-delay conditions. Under no delay, GNN-PPO achieved an average WEF penalty 2.5\% lower than that of PPO, although the difference was not statistically significant, indicating comparable nominal performance. In contrast, under observation delays of one to five months, the average WEF penalty of GNN-PPO was approximately 6.2\% lower than that of PPO, with a statistically significant performance difference (p = 0.027). Moreover, GNN-PPO remained largely insensitive to a five-month water-subsystem delay, whereas PPO exhibited a clear increase in average WEF penalty. Node-level analysis further identified the Hetao diversion interface (W8) as the most delay-sensitive location. Overall, GNN-PPO maintains stable and feasible WEF system operation under delayed observations, whereas PPO shows clear performance degradation.
+\end{abstract}
+
+\begin{keywords}
+\sep. Water-energy-food nexus 
+\sep. The Upper Yellow River
+\sep. Heterogeneous graph neural network
+\sep. Proximal policy optimization (PPO)
+\sep. Delayed observation
+\sep. System
+\end{keywords}
+
+% Optional Elsevier highlights template (activate after content is drafted):
+% \begin{highlights}
+% \item Add a concise research highlight.
+% \end{highlights}
+
+\maketitle
+
+\section{Introduction} \label{sec1}
+\subsection{Background} \label{sec11}
+
+China faces the simultaneous challenge of securing limited water resources, meeting large energy demands, and maintaining stable food production. This makes coordinated water-energy-food (WEF) system management increasingly important \citep{hoff2011,bazilian2011,zhang2018concepts}. This challenge is particularly acute in the Yellow River Basin, where limited water resources must simultaneously support reservoir regulation, hydropower generation, and agricultural irrigation \citep{si2019,liu2019,Ren2022YellowRiverWEFC,Zhang2024YellowRiverWEFEfficiency}. These subsystems are tightly coupled: reservoir releases affect downstream water availability and hydropower generation, electricity availability constrains irrigation pumping, and irrigation withdrawals influence crop-water supply and downstream ecological flows. As a result, decisions made for one subsystem can transfer pressure to another, making coordinated operation necessary rather than independent WEF management.
+
+Such coordination becomes more difficult when observational data are not fully synchronized. Reservoir, river, electricity, pumping, and agricultural states are obtained through different monitoring and reporting processes, so current decisions may have to rely on observations from earlier periods. Delayed observations can directly alter sequential decision making in reinforcement learning \citep{Agarwal2021DelayedObservations}. Therefore, the WEF system must address three coupled challenges: cross-subsystem physical dependence, sequential resource allocation, and delayed observations.
+
+A large body of research has been developed to understand and manage this WEF nexus. Reviews of WEF nexus research have mainly classified existing studies into relationship analysis, system assessment, scenario analysis, and optimization \citep{albrecht2018,lyureview2026}. Synergy-based models have been used to quantify coordination and identify critical factors affecting the stability of WEF system \citep{Zhang2020WEFSynergy,han2024}, while optimization studies have considered trade-offs among water, energy, and food objectives and searched for improved resource allocation strategies \citep{DiMartino2023FEWNOptimizationReview,hong2024,memarzadeh2019,ocaranza2024,zuniga2025,dimartino2025}. Multi-actor approaches have further been introduced to represent the different objectives and decision levels involved in WEF management \citep{SaintBois2024WEFMultiActor}. Similar research trends can be observed in the Yellow River Basin. \cite{Ren2022YellowRiverWEFC} developed a water-energy-food-carbon optimization model for agricultural resource allocation under uncertainty. \cite{Zhang2024YellowRiverWEFEfficiency} evaluated WEF system efficiency and used scenario simulation and machine learning to explore future development pathways. \cite{Wang2025YellowRiverWEFDrivers} investigated the spatial development of the WEF nexus and its internal and external driving factors \citep{wu2025}, whereas \cite{Niu2026YellowRiverWEFResilience} assessed the spatial and temporal evolution of WEF nexus resilience and identified major obstacles and drivers. More recently, reinforcement learning has also been introduced for short-term operational coordination of China's WEF nexus \citep{lyu2026}. Nevertheless, much of the existing literature primarily answers questions such as how WEF subsystems are related, how coordinated or efficient the system is, and how resources should be allocated under a given scenario. Comparatively less attention has been given to a node-level operational question: how should interconnected WEF resources make sequential water-allocation decisions when observations from different parts of the system are delayed? In particular, how the duration and location of observation delays affect operation within a coupled WEF network remains insufficiently understood.
+
+This problem motivates a graph-based operational representation of the WEF system. A WEF system is naturally structured as a network rather than an unordered collection of variables. Reservoirs are connected to downstream river reaches; reservoir releases are connected to hydropower generation; electricity supply is connected to pumping; and irrigation delivery is connected to crop-water demand. Therefore, graph neural networks (GNNs) provide a direct way to preserve such physical connectivity for the system \citep{velickovic2018,jiang2020,niu2021,mei2026}. Previous studies have shown that graph-based learning can effectively represent spatial dependencies in hydrological networks \citep{Sun2021HydrologyGNN} and hydraulic relationships in water distribution systems \citep{Truong2024WDNGNN}. More importantly, graph-based reinforcement-learning policies have shown greater robustness than conventional dense policies under data acquisition errors in networked power systems, even when their nominal rewards are similar \citep{Lee2022GraphPolicyVoltVar}. This is particularly relevant to WEF system operation because a graph-based policy can use the physical connections among reservoirs, rivers, electricity facilities, pumping systems, and crop nodes when making decisions from delayed observations. Reinforcement learning is also well suited to this setting because reservoir and water-allocation problems are sequential: a release or diversion made in the current period changes the resources available in later periods \citep{haarnoja2018}. Reinforcement learning has therefore been increasingly used for multi-objective water-resource operation, cascaded reservoir scheduling, and forecast-informed reservoir control \citep{Castelletti2013MultiobjectiveRL,Xu2020CascadedReservoirDRL,Zanutto2025ForecastRL,Wu2024TransformerDRLReservoir,Xie2026LongHorizonReservoirDRL,hooshyar2020}.
+
+% At the same time, physically infeasible actions remain a major concern when learning-based controllers are applied to reservoir systems, which motivates the explicit treatment of operational constraints \citep{achiam2017,Xie2026SafeRLReservoir}.
+
+Based on these considerations, this study explicitly represents the Upper Yellow River WEF system as a fixed, 24-node heterogeneous graph and couples this node-resolved representation with Proximal Policy Optimization (PPO) \citep{yu2022}. The nodes represent reservoirs, river reaches, water-delivery interfaces, hydropower stations, electricity assets, pumping systems, an ecological control section, and crop zones. A single policy makes four monthly water-allocation decisions: releases from the two reservoirs and diversions to the Ningxia and Hetao irrigation districts, while hydropower generation, electricity allocation, pumping, downstream flow, and crop-water delivery are determined through the corresponding physical WEF relationships. To evaluate decision making under outdated observations, node observations supplied to the policy are delayed by up to five months, while the physical system continues to evolve according to its current state. A deterministic execution layer further ensures that the policy outputs satisfy reservoir-storage, channel-capacity, annual-diversion, and pumping-energy constraints. This design enables separate evaluation of nominal performance with no delayed observations and robustness under observation delays, while also identifying which parts of the Upper Yellow River WEF network are most sensitive to delayed observations.
+
+
+
+\subsection{Contributions}
+\label{sec12}
+
+The main contributions of this study are summarized as follows.
+
+\begin{enumerate}
+
+    \item \textbf{A node-level WEF operational graph is constructed.}
+    The Upper Yellow River WEF system is represented by 24 physically connected water, energy, and food entities, with four direct control decisions for reservoir releases and irrigation diversions.
+
+    \item \textbf{A GNN-PPO framework with delayed observations is developed for WEF system.}
+    The framework combines graph-based state representation, delayed observations, and deterministic feasibility constraints to support physically feasible decisions under delayed observations.
+
+    \item \textbf{The impact and location of delayed observations are systematically evaluated.}
+    Uniform, subsystem-specific, and node-specific delay experiments are used to compare PPO and GNN-PPO and identify where delayed observations most strongly affect WEF operation.
+
+\end{enumerate}
+
+\subsection{Structure} \label{sec13}
+This paper is organized as follows. Section \ref{sec2} formulates the physical Upper Yellow River WEF system and defines the water, energy, and irrigation relationships represented by the heterogeneous graph. Section \ref{sec3} presents the GNN-PPO algorithm with delayed observations, including its reward function and training and evaluation procedure. Section \ref{sec4} reports the results for no delayed observations, uniform delays, subsystem delays, and single-node observation-delay sensitivity. Sections \ref{sec5} and \ref{sec6} present the discussion and conclusions. Supporting definitions of the performance indicators and data sources are provided in Supplementary Tables~\ref{tab:system-performance-indicators}--\ref{tab:data-sources}.
+
+
+
+\section{WEF nexus model} \label{sec2}
+
+\subsection{Problem Description and overall framework}
+
+\label{sec21}
+This study considers the monthly operation of WEF system in the Upper Yellow River and asks a practical decision-making question: when the information available to the agent is one to five months out of date, can it still determine appropriate reservoir releases and irrigation diversions while maintaining stable operation of the interconnected WEF system? 
+
+The system is represented as a 24-node heterogeneous graph ($\mathcal{G}$) in Fig.~\ref{fig:framework}, comprising nine water subsystem nodes (W1-W9), nine energy subsystem nodes (E1-E9), and six food-subsystem nodes (F1-F6) (see definitions in Table~\ref{tab:definitions}). The water subsystem includes the Longyangxia and Liujiaxia reservoirs (W1--W2), four successive river reaches (W3-W6), the Ningxia and Hetao diversion-delivery-return-flow interfaces (W7-W8), and the Toudaoguai hydrological control section (W9). The energy subsystem contains the two associated hydropower stations (E1-E2), aggregated non-hydro renewable generation (E3), an electricity-import boundary (E4), a regional electricity-clearing node (E5), two district electricity-allocation interfaces (E6-E7), and the Ningxia and Hetao irrigation pumping systems (E8-E9), while the food subsystem consists of wheat, maize, and rice in Ningxia (F1-F3) and wheat, maize, and sunflower in Hetao (F4-F6).
+
+
+
+In the upper Fig.~\ref{fig:framework}, reservoir conditions at Longyangxia and Liujiaxia (W1-W2) determine reservoir releases, which propagate through the downstream river reaches (W3-W6) and generate hydropower at E1-E2. Hydropower, nonhydro renewables (E3), and grid imports (E4) are integrated through the regional electricity system (E5) and allocated to base demand and irrigation pumping in Ningxia and Hetao (E6-E9). The resulting pumping availability constrains diversions at W7-W8, which supply the Ningxia (F1-F3) and Hetao (F4-F6) crop zones, while irrigation withdrawals and return flows determine the downstream flow reaching the Toudaoguai control section (W9).
+
+
+The lower part of Fig.~\ref{fig:framework} shows how the physical WEF system is controlled by reinforcement learning. At each month, the agent uses the information from the 24 graph nodes to determine four control actions: releases from the Longyangxia and Liujiaxia reservoirs (W1--W2) and diversions to the Ningxia and Hetao irrigation districts (W7--W8). Only these four variables are directly controlled by the agent. Hydropower generation, electricity allocation, pumping, crop-water supply, and downstream flow are subsequently calculated by the WEF model. The reward evaluates the resulting water, energy, and food performance of the system.
+
+The agent makes these decisions based on the observed states of the 24 nodes, including reservoir, river, electricity, pumping, and crop-related information. The main difficulty considered in this study is that these observations may not be up to date. When the physical system has already reached month $t$, the information available for node $i$ may still come from an earlier month, $O_i(t)=X_i(t-\tau_i)$, where $0\leq\tau_i\leq5$. Thus, the agent may have to make the current decision using information that is one to five months old.
+
+Before the four actions are applied, they are checked against the physical operating constraints of the system, including reservoir storage and release limits, available water, channel capacity, annual diversion limits, pumping capacity, and electricity availability. The problem is therefore to determine whether the agent can still make effective monthly reservoir-release and irrigation-diversion decisions when its observations are delayed, while maintaining feasible and stable WEF system operation.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{framework.png}
+    \par\vspace{-2pt}
+    \caption{Overall framework of the WEF heterogeneous graph PPO approach }
+    \label{fig:framework}
+    \vspace{2pt}
+\end{figure}
+
+
+
+
+
+\subsection{Physical model of the water subsystem} \label{sec22}
+The water subsystem describes how reservoir storage and releases are transmitted through the downstream river network and converted into irrigation deliveries, return flows, and the remaining downstream water supply. For either reservoir, next-month storage follows the water balance: 
+\begin{equation}
+  S_{\mathrm{next}}=S+I-R-L.
+  \label{eq:reservoir-balance}
+\end{equation}
+Here, $S$, $I$, $R$, and $L$ are current storage, monthly inflow, executed release, and reservoir loss, respectively. The same balance is applied to both reservoirs. Storage and release are subsequently restricted to their feasible operating bounds during environment execution. The directed water chain is
+\[
+\begin{gathered}
+  W1\rightarrow W3\rightarrow W2\rightarrow W4\rightarrow W7\\[-2pt]
+  {}\rightarrow W5\rightarrow W8\rightarrow W6\rightarrow W9.
+\end{gathered}
+\]
+Within a monthly decision period, every river segment is evaluated from upstream to downstream by:
+\begin{align}
+  Q_{\mathrm{out}}&=Q_{\mathrm{in}}-(1-f)D+G.
+  \label{eq:reach-transfer}\\
+  V&=\eta D.
+  \label{eq:field-effective-water}
+\end{align}
+Here, $Q_{\mathrm{in}}$ and $Q_{\mathrm{out}}$ are the upstream and downstream water volumes, $D$ is the executed diversion, $f$ is the return-flow fraction, and $G$ is the net reach gain. Field-effective irrigation water is $V$, where $\eta$ is irrigation efficiency.
+
+% The same relation is applied separately to the two irrigation districts; a reach without an intake uses $D=0$. Negative flow is not permitted in the implementation. River routing is sequential within a month, with no separate inter-month travel-time state.
+
+\subsection{Physical model of the energy subsystem}
+\label{sec23}
+The energy subsystem describes how reservoir releases are converted into hydropower and how available electricity is allocated to regional demand and irrigation pumping, which in turn constrains the amount of water that can be delivered to the irrigation districts. For either reservoir, release is converted into hydropower and diversion is converted into pumping-electricity demand as:
+\begin{align}
+  E_{\mathrm{hydro}}&=\min(\beta R,E_{\max}).
+  \label{eq:energy-coupling}\\
+  E_{\mathrm{pump}}&=k\frac{DH}{\eta_p},
+  \qquad k=0.2725.
+  \label{eq:pumping-electricity-demand}
+\end{align}
+Here, $\beta$ is energy per unit release, $E_{\max}$ is monthly hydropower capacity, $H$ is pump head, and $\eta_p$ is pump efficiency. With $D$ expressed in $10^8\,\mathrm{m^3\,month^{-1}}$ and $E_{\mathrm{pump}}$ in $\mathrm{GWh\,month^{-1}}$, $k=\rho g10^8/(3.6\times10^{12})=0.2725$ is the corresponding physical unit-conversion factor. Before electricity is allocated, pumping demand is screened by the interface and pump-station capacities. Let $E_{\mathrm{local}}$ denote hydropower plus renewable generation and let $E_{\mathrm{demand}}$ denote base electricity demand plus pumping demand. Electricity import is dispatched minimally as:
+\begin{equation}
+  E_{\mathrm{import}}=
+  \min\!\left(E_{\mathrm{import}}^{\max},
+  \left(E_{\mathrm{demand}}-E_{\mathrm{local}}\right)_+\right).
+  \label{eq:electricity-import}
+\end{equation}
+Base electricity demand has priority; any remaining electricity is shared proportionally between the two accepted pump requests.
+
+The final diversion is limited jointly by water availability and pumping electricity:
+\begin{equation}
+  D=\min\left(D_{\mathrm{water}},D_{\mathrm{power}}\right).
+  \label{eq:final-diversion}
+\end{equation}
+Here, $D_{\mathrm{water}}$ is the diversion feasible under the command, channel, available-water, and remaining annual-diversion constraints. $D_{\mathrm{power}}$ is the diversion supported by allocated pumping electricity under the conversion in Eq.~\ref{eq:pumping-electricity-demand}. Ningxia is processed before Hetao, so its executed diversion determines water subsequently available to Hetao. Insufficient electricity therefore reduces delivered water rather than merely recording an energy shortfall.
+
+\subsection{Physical model of the food subsystem}
+\label{sec24}
+The food subsystem describes how the field-effective irrigation water delivered to each district is allocated among crop zones and how the resulting crop-water deficits are determined. Within each district, the available field water is allocated in proportion to current crop requirement:
+\begin{align}
+  V_c&=V\frac{W_c}{\sum_c W_c}.
+  \label{eq:crop-water-allocation}\\
+  D_c&=\left(W_c-V_c\right)_+.
+  \label{eq:crop-water-deficit}
+\end{align}
+Here, $W_c$ is the requirement of crop $c$, $V$ is total field-effective water, $V_c$ is the allocated share, and $D_c$ is the crop-water deficit. Allocation is zero when the district has no crop-water requirement.
+
+\section{Heterogeneous GNN-PPO Algorithm for WEF system under delayed observations} \label{sec3}
+
+Based on WEF model, the GNN-PPO operates the system once each month. The 24 WEF nodes with delayed observations are first organized according to the graph structure and processed by the GNN. The resulting graph features are then provided to PPO, which determines the monthly reservoir-release and irrigation-diversion commands. Because the observations may be delayed, the GNN-PPO agent can make these decisions using node information from earlier months rather than the current physical state. The four commands produced by PPO are therefore checked against the current reservoir, water, channel, pumping, and electricity constraints before implementation. The feasible commands are subsequently applied to the WEF model in Section~\ref{sec2} to calculate the actual water flows, energy use, crop-water supply, and total WEF penalty for that month. The physical system then moves to the next month, and the same decision process is repeated.
+
+\subsection{Delayed observation model}
+\label{sec31}
+
+At each month, the WEF system is described by the states of the 24 graph nodes. These node features contain the physical information needed for decision making, including reservoir, river, electricity, pumping, and crop-water conditions, together with the month of the year. Under delayed observations, the policy may not receive the current state of every node. Instead, the observation of node $i$ at month $t$ is:
+\begin{equation}
+  O_i(t)=X_i(t-\tau_i),
+  \qquad 0\leq\tau_i\leq5 
+  \label{eq:policy-state}
+\end{equation}
+Here, $O_i(t)$ and $X_i(t)$ are the 12-dimensional observed and current features of node $i$, and the collection of all node features forms $O(t)$. Each node delay remains fixed within an annual episode. The experiments use uniform, subsystem-specific, and single-node delay scenarios. In a uniform scenario $\tau=N$, all 24 nodes use observations $N$ months old. In a subsystem-specific scenario, every node in the designated water, energy, or food subsystem is delayed by $N$ months, while no delay is applied to the other nodes. In a single-node scenario, only the designated node is delayed, while no delay is applied to the other 23 nodes.
+\subsubsection{Heterogeneous GNN-PPO algorithm}
+\label{sec32}
+
+The proposed method combines a heterogeneous GNN with PPO to make decisions for the WEF system. The heterogeneous graph $\mathcal G$ describes how these 24 nodes are connected through water, electricity, pumping, and irrigation relationships. The GNN operates on this fixed graph and passes data along these connections. Therefore, the observation of each node is considered together with data from physically related nodes, rather than being processed independently. The resulting graph structure is then used by the PPO algorithm to generate four control actions: two reservoir releases and two irrigation diversions. After the actions are checked against the physical operating constraints, they are applied to the WEF model. The environment calculates the resulting water, energy, and food conditions and returns a reward, defined as the negative monthly WEF penalty. PPO uses these state--action--reward experiences to update the policy so that better monthly decisions can be learned over repeated interactions with the WEF environment.
+
+The GNN aggregates information along the connections between related nodes and produces their graph-based representations:
+\begin{equation}
+  H=\operatorname{GNN}(O,\mathcal G),
+  \label{eq:gnn-encoding}
+\end{equation}
+where $O$ contains the delayed observations of the 24 nodes, $\mathcal G$ denotes the fixed WEF graph, and $H$ contains the resulting node representations.
+
+\subsubsection{Agent action}
+\label{sec321}
+At each monthly decision period, the four actions are
+\begin{equation}
+  \mathbf a=[R_{\mathrm{w1}},\,R_{\mathrm{w2}},\,D_{\mathrm{w7}},\,D_{\mathrm{w8}}]^{\top}.
+  \label{eq:action-vector}
+\end{equation}
+Here, $R_{\mathrm{w1}}$ and $R_{\mathrm{w2}}$ are releases from reservoir nodes W1 and W2, respectively, while $D_{\mathrm{w7}}$ and $D_{\mathrm{w8}}$ are diversions at the Ningxia and Hetao delivery nodes W7 and W8, respectively. During training, each normalized command $u_k\sim\operatorname{Beta}(\alpha_k,\beta_k)$ is sampled independently on $[0,1]$. 
+
+%These values are scaled by their current release or channel capacities before environment execution. Evaluation uses the mean of each Beta distribution rather than a random draw. The executed releases and diversions then drive the physical transition in Section~\ref{sec2}.
+
+\subsubsection{Agent reward}
+\label{sec322}
+
+The learning target is the negative of a dimensionless WEF penalty. The total penalty and reward are
+\begin{equation}
+  P=P_W+\lambda_E P_E+P_F+P_S,
+  \qquad r=-P,
+  \qquad \lambda_E=0.35.
+  \label{eq:wef-reward}
+\end{equation}
+\begin{equation}
+  P_W=\frac{\left(Q_{\mathrm{eco}}-Q_{\mathrm{w9}}\right)_+}{Q_{\mathrm{eco}}}.
+  \label{eq:water-penalty}
+\end{equation}
+\begin{equation}
+  P_E=0.25\frac{E_{\mathrm{import}}}{E_{\mathrm{import}}^{\max}}
+      +0.75\frac{E_{\mathrm{short}}}{E_{\mathrm{demand}}}.
+  \label{eq:energy-penalty}
+\end{equation}
+\begin{equation}
+  P_F=\frac{\sum_c D_c}{\sum_c W_c}.
+  \label{eq:food-penalty}
+\end{equation}
+The terminal-storage term is $P_S=\mathbf{1}_{\{t=T\}}\frac{1}{2}\sum_{j=1}^{2}(S_j(1)-S_j(T+1))_+/(S_j(1)-S_j^{\min})$ and is zero outside the final month. Here, $P_W$, $P_E$, $P_F$, and $P_S$ are the water, energy, food, and terminal-storage penalties, respectively; $Q_{\mathrm{eco}}$ is the ecological-flow threshold; and $Q_{\mathrm{w9}}$ is the delivered downstream flow. $E_{\mathrm{short}}$ is total unserved electricity, including unmet pumping demand, and $E_{\mathrm{demand}}$ is total electricity demand. The sector weights $(1,0.35,1)$, the unit terminal-storage weight, and the within-energy weights $(0.25,0.75)$ are fixed modelling hyperparameters rather than literature-derived constants and are applied identically to both policies and all delay scenarios. They downweight the energy term relative to water and food and assign unmet demand three times the penalty of grid imports, respectively.
+\subsubsection{PPO optimization}
+\label{sec323}
+
+PPO uses delayed states, the four actions in Eq.~\ref{eq:action-vector}, and rewards in Eq.~\ref{eq:wef-reward}. For one rollout, its mean loss is
+\begin{equation}
+  \mathcal L_{\mathrm{PPO}}=L_{\mathrm{clip}}
+  +0.5L_{\mathrm{value}}-0.01\mathcal H.
+  \label{eq:ppo-objective}
+\end{equation}
+The clipped term uses the joint policy-probability ratio
+\begin{equation}
+  \rho_t(\theta)=
+  \frac{\pi_\theta\!\left(\mathbf u_t\mid O(t)\right)}
+       {\pi_{\theta_{\mathrm{old}}}\!\left(\mathbf u_t\mid O(t)\right)}.
+  \label{eq:ppo-ratio}
+\end{equation}
+For the minimization implementation used here, the standard clipped surrogate loss is
+\begin{equation}
+  L_{\mathrm{clip}}=
+  -\mathbb E_t\!\left[
+  \min\!\left(
+  \rho_t(\theta)\hat A_t,
+  \operatorname{clip}\!\left(\rho_t(\theta),1-\epsilon,1+\epsilon\right)
+  \hat A_t
+  \right)\right].
+  \label{eq:ppo-clipped-surrogate}
+\end{equation}
+Here, $\hat A_t$ is the standardized generalized advantage estimate, $L_{\mathrm{value}}$ is the value loss, and $\mathcal H$ is policy entropy. The value-loss and entropy weights, 0.5 and 0.01, balance critic learning and policy exploration, respectively, and are fixed implementation hyperparameters. We adopt standard clipped PPO with discount factor $\gamma=0.99$, GAE factor $\lambda_{\mathrm{GAE}}=0.95$, and clipping parameter $\epsilon=0.2$, following common GAE and PPO settings \citep{schulman2016gae,schulman2017ppo}. Gradient norm is clipped at 0.5 to limit unstable updates, and the Adam learning rate decays linearly. All settings are identical for PPO and GNN-PPO, and training rollouts use no delayed observations ($\tau=0$).
+
+\subsection{Training and evaluation procedure}
+\label{sec33}
+
+The model was developed using 252 monthly records from 2001 to 2021. The data were divided chronologically into training (2001--2015), validation (2016--2018), and evaluation (2019--2021) periods. Each year was treated as a 12-month episode. At the beginning of each episode, reservoir storage, annual diversion budgets, and the observation buffer were reset.
+
+GNN-PPO and PPO were trained under no delayed observations ($\tau=0$) using the same WEF environment, reward function, constraints, data split, and optimization settings. During validation, the validation years were evaluated under observation delays of 0, 3, and 5 months, and the results were used for checkpoint selection and early stopping. The evaluation years were used only after training was completed.
+
+Within each monthly step, the policy receives the available node observations, generates the four control actions, and passes them through the deterministic feasibility layer. The feasible actions are then applied to the physical WEF model to update reservoir storage, river flow, electricity allocation, pumping, and crop-water supply. The resulting WEF performance is converted into a reward, and the collected transitions are used to update the PPO policy. This procedure is summarized in Algorithm~\ref{alg:monthly-gnn-ppo}.
+
+\begin{algorithm}[H] \caption{Monthly GNN--PPO training and WEF execution} \label{alg:monthly-gnn-ppo} \scriptsize \begin{algorithmic}[1] \Require graph $\mathcal G$, annual WEF data, policy $\pi$, value function $V$, and training years \For{each PPO update} \For{each sampled annual rollout} \State Reset reservoir storage, annual diversion budgets, and observation buffer \For{each month $t=1,\ldots,T$} \State Build delayed policy observation $O(t)$ using Eq.~\eqref{eq:policy-state} \State Encode $O(t)$ with the graph encoder using Eq.~\eqref{eq:gnn-encoding} \State Sample four normalized commands and form $\mathbf a$ using Eq.~\eqref{eq:action-vector} \State Apply deterministic operating constraints before the WEF state update \State Update reservoir storage and river flow using Eqs.~\eqref{eq:reservoir-balance}--\eqref{eq:field-effective-water} \State Allocate electricity and obtain delivered diversions using Eqs.~\eqref{eq:energy-coupling}--\eqref{eq:final-diversion} \State Allocate crop water and deficits using Eqs.~\eqref{eq:crop-water-allocation} and \eqref{eq:crop-water-deficit} \State Calculate $P$, $P_W$, $P_E$, $P_F$, $P_S$, and $r$ using Eqs.~\eqref{eq:wef-reward} and \eqref{eq:water-penalty}--\eqref{eq:food-penalty} \State Store $(O(t),\mathbf u_t,r,O(t+1))$ \EndFor \State Compute the annual indicators in Supplementary Table~\ref{tab:system-performance-indicators} \EndFor \State Estimate generalized advantages $\hat A_t$ and normalize them \State Compute $\rho_t(\theta)\gets\pi_\theta(\mathbf u_t\mid O(t))/\pi_{\theta_{\mathrm{old}}}(\mathbf u_t\mid O(t))$ using Eq.~\eqref{eq:ppo-ratio} \State Form $L_{\mathrm{clip}}\gets-\mathbb E_t[\min\{\rho_t\hat A_t,\operatorname{clip}(\rho_t,1-\epsilon,1+\epsilon)\hat A_t\}]$ using Eq.~\eqref{eq:ppo-clipped-surrogate} \State Combine $L_{\mathrm{clip}}$, $L_{\mathrm{value}}$, and $\mathcal H$ using Eq.~\eqref{eq:ppo-objective}, then update $\pi_\theta$ and $V$ \EndFor \end{algorithmic} \end{algorithm}
+
+Model performance was evaluated over the three held-out years. The primary metric was the average WEF penalty over a 12-month episode:
+\begin{equation}
+  P_{\mathrm{avg}}
+  =
+  \frac{1}{T}\sum_{t=1}^{T}P_t,
+  \qquad T=12,
+  \label{eq:average-wef-penalty}
+\end{equation}
+where lower values of $P_{\mathrm{avg}}$ indicate better overall WEF performance. To complement this aggregate metric, we also recorded ecological-flow reliability, irrigation-water satisfaction, and energy-demand satisfaction. Their definitions and preferred directions are given in Supplementary Table~\ref{tab:system-performance-indicators}; these indicators are descriptive endpoints. PPO and GNN--PPO were compared using the same training seeds and evaluation years.
+
+
+
+\section{Experiment results and analysis}
+\label{sec4}
+This section evaluates the proposed GNN-PPO method on the node-resolved, 24-node Upper Yellow River WEF system with no delayed observations and under uniform, subsystem-specific, and single-node observation delays.
+
+Figure~\ref{fig:training-reward} shows the rewards of PPO and GNN-PPO during training with no delayed observations ($\tau=0$) and a five-month observation delay ($\tau=5$).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\columnwidth]{reward.png}
+  \par\vspace{-2pt}
+  \caption{Reward curves of PPO and GNN-PPO with delay and no delay}
+  \label{fig:training-reward}
+  \vspace{2pt}
+\end{figure}
+
+\subsection{Data source and processing}
+\label{sec41}
+
+Supplementary Table~\ref{tab:data-sources} summarizes the source and preprocessing of the water, energy, irrigation, and meteorological variables used in the monthly model. The resulting 2001-2021 dataset combines reservoir and river states, irrigation diversions and crop areas, electricity-system inputs, and meteorology-derived crop-water requirements.
+
+% All reported
+% evaluation episodes met the terminal-storage and safety constraints; the
+% detailed definitions and audit outcomes are provided in Supplementary
+% Table~\ref{tab:feasibility-safety-audit}.
+
+\subsection{Experiment 1: PPO and GNN-PPO with no delayed observations}
+\label{sec42}
+Table~\ref{tab:nodelay} compares PPO and GNN-PPO with no delayed observations on the held-out test years of the Upper Yellow River WEF system. GNN-PPO achieved a slightly higher mean monthly reward than PPO ($-0.5152 \pm 0.0516$ vs. $-0.5285 \pm 0.0294$), corresponding to a paired difference of $+0.0134$. However, the 95\% confidence interval of the difference included zero ($[-0.0170,\,0.0477]$), and the difference was not statistically significant ($p=0.455$). A similar pattern was observed for the subsystem-level performance indicators. PPO and GNN-PPO achieved ecological-flow reliabilities of 95.56\% and 94.17\%, energy-demand satisfaction rates of 56.58\% and 59.69\%, and crop-water satisfaction rates of 14.95\% and 14.30\%, respectively. None of these differences was statistically significant ($p>0.05$), showing that PPO and GNN-PPO performed similarly across the water, energy, and food subsystems when no observation delay was present. Complete definitions of the indicators are provided in Supplementary Table~\ref{tab:system-performance-indicators}.
+
+
+\begin{table}[pos=ht]
+\centering
+\caption{Performance comparison between PPO and GNN-PPO with no delayed observations}
+\label{tab:nodelay}
+\footnotesize
+\setlength{\tabcolsep}{1.8pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}X
+  >{\centering\arraybackslash}m{0.135\columnwidth}
+  >{\centering\arraybackslash}m{0.135\columnwidth}
+  >{\centering\arraybackslash}m{0.120\columnwidth}
+  >{\centering\arraybackslash}m{0.210\columnwidth}
+  >{\centering\arraybackslash}m{0.080\columnwidth}@{}}
+\toprule
+\shortstack[l]{Performance\\metric}
+& PPO 
+& \shortstack{GNN-\\PPO}
+& $\Delta$ 
+& 95\% CI 
+& \shortstack{$p$-\\value} \\
+\midrule
+
+Reward 
+& \shortstack{$-0.5285$\\$\pm 0.0294$}
+& \shortstack{$-0.5152$\\$\pm 0.0516$}
+& $+0.0134$
+& \shortstack{$[-0.0170,$\\$0.0477]$}
+& $0.455$ \\
+
+Ecological-flow reliability (\%)
+& \shortstack{$95.56$\\$\pm 4.18$}
+& \shortstack{$94.17$\\$\pm 4.03$}
+& $-1.39$
+& \shortstack{$[-4.17,$\\$1.67]$}
+& $0.625$ \\
+
+Energy-demand satisfaction (\%)
+& \shortstack{$56.58$\\$\pm 3.90$}
+& \shortstack{$59.69$\\$\pm 7.09$}
+& $+3.11$
+& \shortstack{$[-1.16,$\\$7.51]$}
+& $0.223$ \\
+
+Irrigation-water satisfaction (\%)
+& \shortstack{$14.95$\\$\pm 1.94$}
+& \shortstack{$14.30$\\$\pm 3.32$}
+& $-0.65$
+& \shortstack{$[-2.70,$\\$1.41]$}
+& $0.559$ \\
+
+\bottomrule
+\end{tabularx}
+
+\par\vspace{2pt}
+\begin{minipage}{\columnwidth}
+\raggedright
+\textit{Note:} Values are reported as mean $\pm$ std across 10 independently trained seeds evaluated on the held-out test years. $\Delta$ is calculated as GNN-PPO minus PPO. For all metrics, higher values indicate better performance.
+\end{minipage}
+\end{table}
+
+
+
+\subsection{Experiment 2: Performance with observation delays}
+\label{sec43}
+
+
+\begin{table}[pos=ht]
+\centering
+\caption{Comparison of PPO and GNN-PPO under no-delay and delayed-observation conditions}
+\label{tab:exp2}
+\footnotesize
+\setlength{\tabcolsep}{1.8pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}X
+  >{\centering\arraybackslash}m{0.130\columnwidth}
+  >{\centering\arraybackslash}m{0.150\columnwidth}
+  >{\centering\arraybackslash}m{0.120\columnwidth}
+  >{\centering\arraybackslash}m{0.210\columnwidth}
+  >{\centering\arraybackslash}m{0.080\columnwidth}@{}}
+\toprule
+Condition
+& \shortstack{PPO\\reward}
+& \shortstack{GNN-\\PPO\\reward}
+& $\Delta$
+& \shortstack{95\% CI\\of $\Delta$}
+& \shortstack{$p$-\\value} \\
+\midrule
+
+No delay ($\tau=0$)
+& $-0.5285$
+& $-0.5152$
+& $+0.0134$
+& \shortstack{$[-0.0170,$\\$0.0477]$}
+& $0.455$ \\
+
+Delayed ($\tau=1$--$5$)
+& $-0.5485$
+& $-0.5147$
+& $\mathbf{+0.0337}$
+& \shortstack{$\mathbf{[0.0099,}$\\$\mathbf{0.0607]}$}
+& $\mathbf{0.027}$ \\
+
+\bottomrule
+\end{tabularx}
+
+\par\vspace{2pt}
+\begin{minipage}{\columnwidth}
+\raggedright
+\textit{Note:} $\Delta$ is calculated as GNN-PPO minus PPO.
+\end{minipage}
+\end{table}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\columnwidth]{fig2.png}
+  \par\vspace{-2pt}
+  \caption{Rewards of PPO and GNN-PPO under observation delays from 0 to 5 months}
+  \label{fig:delay_rewards}
+  \vspace{2pt}
+\end{figure}
+
+Figure~\ref{fig:delay_rewards} summarizes the mean monthly rewards of PPO and GNN-PPO under uniform observation delays from 0 to 5 months. As the delay increased, PPO exhibited a clear reduction in performance, with the mean monthly reward decreasing from $-0.5285$ at $\tau=0$ to approximately $-0.55$ for delays of 0-5 months. In contrast, the reward of GNN-PPO remained nearly unchanged across all delay levels, varying only from $-0.5152$ at $\tau=0$ to $-0.5146$ at $\tau=5$. This contrasting trend indicates that PPO is more sensitive to delayed observations, whereas GNN-PPO maintains relatively stable decision performance as the observation delay increases.
+
+To further quantify this difference, Table~\ref{tab:exp2} compares performance with no delayed observations against the average over the delayed conditions ($\tau=1$--$5$). With no delayed observations, the reward difference between GNN-PPO and PPO was only $+0.0134$, with a 95\% confidence interval of $[-0.0170,\,0.0477]$ and no statistically significant difference ($p=0.455$). Under delayed observations, however, the average PPO reward decreased to $-0.5485$, whereas GNN-PPO remained at $-0.5147$. Consequently, the reward difference increased to $+0.0337$, with a 95\% confidence interval of $[0.0099,\,0.0607]$ and a statistically significant difference ($p=0.027$). The main finding of Experiment~2 is therefore that GNN-PPO exhibits greater robustness to observation delays than PPO, maintaining nearly unchanged WEF performance even when all 24 Upper Yellow River WEF nodes receive observations up to five months old.
+
+\subsection{Experiment 3: WEF performance with subsystem-specific and single-node delays}
+\label{sec44}
+
+\begin{table}[pos=ht]
+\centering
+\caption{Five-month sensitivity of PPO and GNN-PPO.}
+\label{tab:sensitivity}
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}X
+  >{\centering\arraybackslash}m{0.35\columnwidth}
+  >{\centering\arraybackslash}m{0.37\columnwidth}@{}}
+\toprule
+Delay source 
+& \shortstack{PPO $\Delta P_{\mathrm{avg}}$\\(95\% CI)}
+& \shortstack{GNN-PPO $\Delta P_{\mathrm{avg}}$\\(95\% CI)} \\
+\midrule
+
+Water subsystem
+& \shortstack{$+0.01735$\\$[0.00266,\,0.03602]$}
+& \shortstack{$+0.00017$\\$[-0.00208,\,0.00237]$} \\
+
+Energy subsystem
+& \shortstack{$+0.00856$\\$[0.00027,\,0.02238]$}
+& \shortstack{$-0.00009$\\$[-0.00060,\,0.00044]$} \\
+
+Food (crop) subsystem
+& \shortstack{$+0.01614$\\$[0.00217,\,0.03449]$}
+& \shortstack{$-0.00042$\\$[-0.00175,\,0.00050]$} \\
+
+% W8 only
+% & $+0.00187\ [0.00019,\,0.00521]$
+% & $+0.00062\ [0.00016,\,0.00130]$ \\
+
+\bottomrule
+\end{tabularx}
+
+\par\vspace{2pt}
+\begin{minipage}{\columnwidth}
+\raggedright
+\textit{Note:} $P_{\mathrm{avg}}$ is the average WEF penalty defined in Eq.~\eqref{eq:average-wef-penalty}, and $\Delta P_{\mathrm{avg}}=P_{\mathrm{avg}}^{\mathrm{delay}}-P_{\mathrm{avg}}^{\tau=0}$; positive values indicate deterioration.
+\end{minipage}
+\end{table}
+
+Table~\ref{tab:sensitivity} first compares the five-month delay-induced changes in the average WEF penalty $P_{\mathrm{avg}}$ of PPO and GNN-PPO when delayed observations are restricted to individual WEF subsystems. For PPO, delaying the water, energy, and food subsystems increased $P_{\mathrm{avg}}$ by $+0.01735$, $+0.00856$, and $+0.01614$, respectively. The corresponding 95\% confidence intervals were entirely above zero, indicating consistent deterioration relative to the no-delay condition. In contrast, the corresponding changes under GNN-PPO were substantially smaller ($+0.00017$, $-0.00009$, and $-0.00042$, respectively), and all confidence intervals included zero. These results indicate that the greater robustness of GNN-PPO under observation delays also extends to scenarios in which delayed observations are confined to a particular WEF subsystem.
+
+
+To determine whether this aggregate robustness concealed a subsystem-wide weakness, we delayed the observations of only the water, energy, or food (crop) subsystem by one to five months, while applying no observation delay to the other nodes. Fig.~\ref{fig3} further examines the subsystem-specific sensitivity of GNN-PPO across delays of 1--5 months. No clear subsystem-wide deterioration was detected for the water, energy, or food (crop) subsystems. Across the 15 tested subsystem-delay scenarios (three subsystems $\times$ five delay levels), none of the 95\% confidence intervals lay entirely above zero, while most intervals crossed zero. At a five-month delay, the estimated changes in the average WEF penalty were only $+0.17\times10^{-3}$ for water, $-0.09\times10^{-3}$ for energy, and $-0.42\times10^{-3}$ for food (crop). Thus, although the location of delayed observations differed across the three WEF subsystems, GNN-PPO maintained approximately its no-delay performance over the tested delay range. This subsystem-level robustness motivates the subsequent node-specific analysis, which examines whether localized vulnerabilities remain within individual Upper Yellow River WEF nodes.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\columnwidth]{fig3.png}
+  \par\vspace{-2pt}
+  \caption{Impact of observation delays on WEF subsystems}
+  \label{fig3}
+  \vspace{2pt}
+\end{figure}
+When the observations of only one subsystem were delayed, no clear change was observed in the average WEF penalty. However, the episode-averaged water, energy, and food penalty components still showed measurable changes, as shown in Fig.~\ref{fig4}.
+
+When water-subsystem observations were delayed, the water penalty component showed the clearest response, increasing from $+0.39\times10^{-3}$ at a one-month delay to $+1.14\times10^{-3}$ at delays of four and five months. This indicates that delayed observations originating from the water subsystem primarily affected the water-related performance of the system. In contrast, the food penalty component changed in the opposite direction, decreasing from $-0.28\times10^{-3}$ to $-0.86\times10^{-3}$ as the delay increased, while the energy penalty response remained comparatively small. 
+
+Observation delays in the energy subsystem produced relatively small changes in all three penalty components. Observation delays in the food subsystem also resulted in limited overall changes, but were associated with a moderate increase in the energy penalty component and a decrease in the food penalty component. Overall, these results indicate that observation delays can redistribute the water, energy, and food penalty components without clearly increasing the overall average WEF penalty.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\columnwidth]{fig4.png}
+  \par\vspace{-2pt}
+  \caption{Effects of subsystem-specific observation delays}
+  \label{fig4}
+  \vspace{2pt}
+\end{figure}
+
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\columnwidth]{fig5.png}
+  \par\vspace{-2pt}
+  \caption{Impact of 24 nodes observation delay in the Upper Yellow River WEF system}
+  \label{fig5}
+  \vspace{2pt}
+\end{figure}
+
+We therefore examined a five-month observation delay at each of the 24 operational nodes in the Upper Yellow River WEF network, while applying no observation delay to the remaining 23 nodes, as shown in Fig.~\ref{fig5}.
+
+Most nodes produced only small changes in the average WEF penalty, with their 95\% confidence intervals overlapping zero. However, W8 showed the largest positive change in average WEF penalty, and its 95\% confidence interval remained above zero, identifying W8 as the clearest local vulnerability under the tested five-month single-node delay. Several other nodes, including W2 and W3, also showed positive point estimates, but their confidence intervals crossed zero and therefore did not provide equally clear evidence of deterioration.
+
+These results indicate that the robustness of GNN-PPO is not completely uniform across the Upper Yellow River WEF network. Although no clear subsystem-wide vulnerability was detected, the node-level analysis revealed that the effects of observation delays can be concentrated at specific locations, with W8 showing the strongest sensitivity under the tested conditions.
+
+
+
+\section{Discussion} \label{sec5}
+
+The experimental evaluation confirms that while graph representation offers marginal advantage under ideal, synchronized data conditions, it fundamentally safeguards operational resilience when system observations are delayed. Conventional PPO policies suffer noticeable degradation as reporting lags increase, exposing an intrinsic brittleness in flat architectures when handling temporal asynchrony. In contrast, GNN-PPO sustains baseline performance through uniform delays of up to five months. This stability bridges the persistent gap between theoretical optimization models—which assume instantaneous data availability—and the realities of fragmented, multi-agency field reporting.  
+
+The structural modeling of the 24-node heterogeneous graph is central to this resilience. By explicitly encoding physical links across water, energy, and food subsystems, the GNN architecture prevents the policy from over-relying on isolated local states. When a specific node's observation is delayed, the network leverages topological context from adjacent subsystems to compensate for missing local signals. However, the node-level sensitivity screening uncovers critical spatial asymmetries in this buffering effect. Downstream consumption terminals, particularly the Hetao diversion interface (node W8), act as critical bottlenecks where observation delays directly trigger measurable increases in average WEF penalty. This indicates that while the graph successfully absorbs upstream and mid-stream delays through topological interpolation, terminal nodes characterized by high volumetric extraction and rigid local demands require prioritized, real-time telemetry.  
+
+The fixed-graph, centralized formulation remains a limitation. Future research will examine dynamic graph topologies and decentralized multi-agent adaptations under more severe climate uncertainty.
+
+\section{Conclusions} 
+\label{sec6}
+
+This study developed a delayed-observation GNN-PPO framework for node-level operational coordination of the Upper Yellow River WEF system. Unlike conventional WEF studies that mainly evaluate system-level coupling or coordination, the proposed framework resolves the Upper Yellow River system into 24 physically connected water, energy, and food entities and directly supports monthly operational decisions. The policy controls only four key decisions—two reservoir releases and two irrigation diversions—while hydropower generation, electricity allocation, pumping, downstream flow, and crop-water delivery are determined through the corresponding physical relationships. A deterministic execution layer further ensures that the learned decisions remain within reservoir, channel, diversion, and pumping-energy constraints.
+
+The results show that the main advantage of GNN-PPO emerges under observation delays rather than under the no-delay condition. With no delayed observations, GNN-PPO and PPO showed statistically comparable performance, with the average WEF penalty of GNN-PPO approximately 2.5\% lower than that of PPO. However, when observations were delayed by one to five months, the average WEF penalty of GNN-PPO was approximately 6.2\% lower than that of PPO, and the difference became statistically significant (p = 0.027). More importantly, the average WEF penalty of GNN-PPO remained within approximately 0.1\% of its no-delay level, whereas that of PPO increased by approximately 3.8\%. Even when all 24 nodes received observations up to five months old, GNN-PPO maintained nearly unchanged performance. These results demonstrate that explicitly representing cross-node and cross-subsystem relationships can substantially improve the robustness of Upper Yellow River WEF operation to delayed observations.
+
+The subsystem and node level experiments further localized observation-delay risk within the Upper Yellow River WEF network. Under a five-month water subsystem delay, the increase in average WEF penalty was reduced from 0.01735 with PPO to only 0.00017 with GNN-PPO, corresponding to an approximately 99\% reduction in delay-induced deterioration. Energy and food subsystem delays caused no clear increase in the average WEF penalty of GNN-PPO, and none of the 15 subsystem-delay scenarios showed statistically clear deterioration. Nevertheless, observation delays can redistribute impacts among the water, energy, and food penalty components rather than simply increasing the overall average WEF penalty. The single-node analysis also showed that robustness is not spatially uniform: the Hetao diversion interface W8 was identified as the clearest local vulnerability, suggesting that real-time monitoring resources should be prioritized at critical downstream allocation interfaces rather than distributed uniformly across the entire Upper Yellow River WEF network.
+
+Finally, the deterministic feasibility layer achieved the terminal reservoir-storage targets in every reported evaluation, produced no annual-diversion exceedances, and resulted in zero post-projection safety violations. Therefore, the contribution of the proposed framework is not simply to obtain a higher reinforcement-learning reward, but to provide a graph-based operational approach that maintains physically feasible and relatively stable WEF decisions when system observations become asynchronous or outdated. Future work could extend the current fixed-graph, centralized formulation toward dynamic graph structures, more severe climate and demand disturbances, and decentralized or multi-agent decision architectures.
+
+
+\appendix
+
+\setcounter{table}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+
+\begin{table*}[pos=t]
+{\normalfont\normalsize
+\section{Supplementary tables}
+\label{app:supplementary-tables}}
+\caption{Registry of the 24 graph entities and their principal dynamic states.}
+\label{tab:definitions}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.04}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}p{0.22\textwidth} l
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+ID & Node name & Type & Principal dynamic state \\
+\midrule
+W1 & Longyangxia reservoir & res & storage, inflow, head, evaporation, spill capability, physical and operating-buffer bounds \\
+W2 & Liujiaxia reservoir & res & storage, inflow, head, evaporation, spill capability, physical and operating-buffer bounds \\
+W3 & Longyangxia--Liujiaxia reach & river & monthly routed volume and declared reach loss \\
+W4 & Liujiaxia--Ningxia intake reach & river & monthly routed volume and declared reach loss \\
+W5 & Ningxia--Hetao reach & river & monthly routed volume and declared reach loss \\
+W6 & Hetao--Toudaoguai reach & river & monthly routed volume and declared reach loss \\
+W7 & Ningxia diversion--delivery--return-flow accounting interface & delivery & intake water and capacity, remaining annual budget, channel/conveyance limits, diversion, field-effective supply, return and downstream flow \\
+W8 & Hetao diversion--delivery--return-flow accounting interface & delivery & intake water and capacity, remaining annual budget, channel/conveyance limits, diversion, field-effective supply, return and downstream flow \\
+W9 & Toudaoguai control section & ctrl & flow, downstream demand, ecological threshold \\
+\midrule
+E1 & Longyangxia hydropower station & hp & turbine capacity, efficiency, availability, head, generation \\
+E2 & Liujiaxia hydropower station & hp & turbine capacity, efficiency, availability, head, generation \\
+E3 & Aggregated non-hydro renewables & grid & generation and availability; renewable role \\
+E4 & Electricity import boundary & grid & import, limit, and availability; import role \\
+E5 & Regional WEF electricity clearing & grid & local/import capacity, served base load, residual pumping supply, curtailment, unserved energy \\
+E6 & Ningxia district electricity-allocation interface & grid & accepted pump demand, interface capacity/availability, allocated supply and shortfall \\
+E7 & Hetao district electricity-allocation interface & grid & accepted pump demand, interface capacity/availability, allocated supply and shortfall \\
+E8 & Ningxia irrigation pumping system & pump & head, efficiency, pump capacity/availability, executed pumping electricity \\
+E9 & Hetao irrigation pumping system & pump & head, efficiency, pump capacity/availability, executed pumping electricity \\
+\midrule
+F1 & Ningxia wheat zone & crop & area, crop coefficient, water requirement, allocated supply, and deficit \\
+F2 & Ningxia maize zone & crop & area, crop coefficient, water requirement, allocated supply, and deficit \\
+F3 & Ningxia rice zone & crop & area, crop coefficient, water requirement, allocated supply, and deficit \\
+F4 & Hetao wheat zone & crop & area, crop coefficient, water requirement, allocated supply, and deficit \\
+F5 & Hetao maize zone & crop & area, crop coefficient, water requirement, allocated supply, and deficit \\
+F6 & Hetao sunflower zone & crop & area, crop coefficient, water requirement, allocated supply, and deficit \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+\FloatBarrier
+
+
+This appendix contains the system performance indicators, and the data source details referenced in the main text.
+
+% \onecolumn
+
+\noindent\begin{minipage}{\columnwidth}
+\makeatletter\def\@captype{table}\makeatother
+\ExplSyntaxOn
+\__reset_tbl:
+\dim_set:Nn \l_tbl_width_dim { \linewidth }
+\cs_set_eq:cN { @makecaption } \__make_tbl_caption:nn
+\ExplSyntaxOff
+\caption{System performance indicators}
+\label{tab:system-performance-indicators}
+\centering
+\sffamily
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.36\linewidth}
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Indicator & Definition and direction \\
+\midrule
+Ecological-flow reliability & Share of months with
+$Q_{\mathrm{w9}}\geq Q_{\mathrm{eco}}$ (higher is better). \\
+% Ecological-flow deficit & Annual sum of positive monthly shortfalls,
+% $(Q_{\mathrm{eco}}-Q_{\mathrm{w9}})_+$ (lower is better). \\
+Irrigation-water satisfaction ratio & $1-$ annual crop-water deficit divided by
+annual crop-water requirement (higher is better). \\
+% Crop-water deficit & Annual $D_c$ summed over crops and months (lower is better). \\
+Energy-demand satisfaction ratio & $1-$ annual unserved electricity (including
+pumping shortfall) divided by annual demand (higher is better). \\
+% Grid-electricity import & Annual external-grid import, conditional on service
+% performance (lower is better). \\
+% Pumping-energy satisfaction ratio & Annual delivered pumping electricity
+% divided by annual pumping electricity required (higher is better). \\
+% Pumping-water delivery ratio & Annual executed diversion divided by the
+% water-side request before pumping curtailment (higher is better). \\
+% End-of-year storage recovery ratio & Mean end/start storage ratio for the two
+% reservoirs, capped at one (higher is better; one denotes full recovery). \\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+\par\medskip
+
+% \onecolumn
+
+% \noindent\begin{minipage}{\textwidth}
+% \makeatletter\def\@captype{table}\makeatother
+% \caption{Feasibility and safety audit. These quantities verify deterministic
+% constraint enforcement and are not treated as policy-performance advantages.}
+% \label{tab:feasibility-safety-audit}
+% \centering
+% \footnotesize
+% \renewcommand{\arraystretch}{1.10}
+% \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}
+%   >{\raggedright\arraybackslash}p{0.50\textwidth}
+%   >{\raggedright\arraybackslash}X@{}}
+% \toprule
+% Audit quantity & Definition and pass condition & Reported outcome \\
+% \midrule
+% Terminal-storage target attainment & Both reservoirs must end each annual
+% episode at or above $\max\{S_j^{\min},f_{\mathrm{target}}S_j(1)\}$, with
+% $f_{\mathrm{target}}=1$. Equivalently, the normalized terminal-storage deficit
+% must equal zero. & Attained in every reported evaluation episode; the storage-
+% recovery ratio was one. \\
+% Annual-diversion compliance & Cumulative executed diversion at each district
+% must not exceed its annual diversion budget. Any exceedance contributes to the
+% safety-violation count. & No annual-budget exceedance was recorded. \\
+% Action-projection rate & Fraction of monthly transitions in which the
+% Euclidean distance between the raw command and executed feasible action
+% exceeded $10^{-8}$. & Projection was applied in every reported monthly
+% transition. \\
+% Safety violations & Sum of monthly post-projection violations of release
+% capacity, storage bounds and reserve floors, channel and annual diversion
+% limits, or pumping-electricity limits. The pass condition is zero. & Zero
+% violations were recorded in all reported evaluations. \\
+% \bottomrule
+% \end{tabularx}
+% \end{minipage}
+
+% \clearpage
+
+\begin{table*}[pos=t]
+\caption{Data sources and preprocessing for the model variables. Directly observed or reported quantities are cited to their source; derived and proxy quantities state the transformation applied.}
+\label{tab:data-sources}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.00}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.10\textwidth}
+  >{\raggedright\arraybackslash}p{0.29\textwidth}
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Data category & Variables & Source \\
+\midrule
+Water & Reservoir storage and loss: $S_{\mathrm{w1}}$, $S_{\mathrm{w2}}$,
+$L_{\mathrm{w1}}$, and $L_{\mathrm{w2}}$ & W1 storage anomaly, water area,
+and evaporation were obtained from Res-CN; the anomaly was centred within the
+physical storage bounds, and evaporation loss was calculated from evaporation,
+surface area, and a 30-day month. W2 storage used the HESS monthly regulation
+climatology and Res-CN evaporation
+\citep{Shen2023ResCN,Shen2022ResCNDataset,Yin2021YellowRiver,Yin2020YellowRiverDataset}. \\
+
+Water & W1 inflow $I_{\mathrm{w1}}$, W9 flow $Q_{\mathrm{w9}}$, and reach gains
+$G$ for W3--W6 & HESS gauge records were used through 2014; the 2001--2014
+monthly climatology was used for 2015--2021. W3 was obtained by reservoir
+balance, and the downstream residual was divided equally among W4--W6
+\citep{Yin2021YellowRiver,Yin2020YellowRiverDataset,NingxiaWaterBulletins,Feng2025Hetao}. \\
+
+Water & Ecological-flow threshold $Q_{\mathrm{eco}}$ & The literature value of
+$125\,\mathrm{m^3\,s^{-1}}$ was converted to a 30-day monthly volume
+\citep{Lu2021EcologicalFlow}. \\
+
+Water & Diversion, drainage return, return fraction $f$, irrigation efficiency
+$\eta$, field supply $V$, and annual budgets for W7 and W8 & Ningxia annual
+values were taken from official water-resources bulletins and divided uniformly
+by 12; missing efficiency anchors were linearly interpolated
+\citep{NingxiaWaterBulletins,Meng2015NingxiaIrrigation}. Hetao annual values were
+digitized from the reported figures and short gaps were interpolated
+\citep{Feng2025Hetao}. Executed diversions are generated by the environment. \\
+
+Water & Channel capacities $D_{\max}$ for W7 and W8 & Reported capacities of
+$750$ and $565\,\mathrm{m^3\,s^{-1}}$ were converted to 30-day monthly volumes
+\citep{NingxiaCanals2017,Liao2022CanalScheduling}. \\
+
+Energy & Reservoir head, installed capacity, $R_{\max}$, and hydropower
+coefficient $\beta$ for E1 and E2 & Design head and installed-capacity records
+were combined with an assumed turbine efficiency of 0.90 to derive $R_{\max}$
+and $\beta$; hydropower generation is calculated after the executed release
+\citep{LongyangxiaNEA2018,Zhang2021Longyangxia,Yin2021YellowRiver}. \\
+
+Energy & E3 renewable generation and availability, E4 import limit, and E5
+base load & Renewable availability was shaped by NASA POWER solar radiation and
+wind speed. The 1-GW renewable scale, 500-GWh monthly import limit, and
+1000-GWh monthly base load are explicit scenario proxies rather than observed
+regional electricity series \citep{NASAPOWER}. Grid import, curtailment, and
+unserved energy are environment outputs. \\
+
+Energy & Pump head, efficiency, interface capacity, and pumping electricity for
+E6--E9 & The Ningxia lift head used the reported 300-m project value; the Hetao
+5-m aggregate lift and 0.75 efficiencies are engineering proxies. Pump demand
+and executed pumping are calculated from diversion, head, efficiency, and the
+electricity allocation \citep{Hongsibu2025Pumping,Liao2022CanalScheduling}. \\
+
+Food & Crop areas $A$ for F1--F6 & Ningxia wheat, maize, and rice areas were
+taken from the statistical yearbooks; missing years were linearly interpolated,
+with 2001--2004 backcast from 2005 \citep{NingxiaStatisticalYearbooks}. Hetao
+wheat, maize, and sunflower areas were digitized from the reported figure, with
+2019--2020 interpolated \citep{Feng2025Hetao}. \\
+
+Food & Crop coefficient $k_c$, requirement $W_c$, allocation $V_c$, and deficit
+$D_c$ & FAO-56 crop coefficients and stage values were used
+\citep{Allen1998FAO56}. Monthly requirements were calculated from crop area,
+$k_c E_0$, and effective precipitation; allocation and deficit were then
+calculated using Eqs.~\eqref{eq:crop-water-allocation} and
+\eqref{eq:crop-water-deficit}. \\
+
+Meteorology & Maximum and minimum temperature, relative humidity, wind speed,
+solar radiation, and precipitation for Ningxia and Hetao & Monthly point data
+for 2001--2021 were obtained from the NASA POWER API at the two district
+coordinates. The reported daily precipitation rate was multiplied by 30 to
+obtain monthly precipitation \citep{NASAPOWER}. \\
+
+Meteorology & Reference evapotranspiration $E_0$ and effective precipitation
+& Daily FAO-56 reference evapotranspiration was calculated from the NASA POWER
+meteorological inputs and multiplied by 30; effective precipitation was derived
+from monthly precipitation following the FAO-56/CROPWAT procedure
+\citep{Allen1998FAO56,FAOCROPWAT,NASAPOWER}. \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+\FloatBarrier
+
+% % \clearpage
+% Continue the bibliography in the existing two-column page flow.
+
+\bibliographystyle{cas-model2-names}
+\balance
+\bibliography{references}
+
+% \clearpage
+% The class writes the footer total after the final page is flushed.
+% \addtocounter{page}{-1}
+\end{document}

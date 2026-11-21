@@ -1,0 +1,95 @@
+{
+  "status": "complete_for_experiments_1_to_4",
+  "study_design": "Experiment 1: current-information PPO vs GNN-PPO; Experiment 2: uniform 0-5-month delay across all 24 nodes",
+  "train_years": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015
+  ],
+  "validation_years": [
+    2016,
+    2017,
+    2018
+  ],
+  "test_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "test_forcing_limitation": "2019-2021 are repeated evaluation conditions with repeated-climatology input; they are not independent catchments.",
+  "seeds": [
+    7,
+    42,
+    73,
+    101,
+    314,
+    509,
+    1234,
+    2026,
+    2718,
+    4096
+  ],
+  "n_training_seeds": 10,
+  "delay_scenarios": [
+    "tau0",
+    "tau1",
+    "tau2",
+    "tau3",
+    "tau4",
+    "tau5"
+  ],
+  "result_groups": [
+    "training",
+    "checkpoints",
+    "raw/experiment_1_2_*",
+    "01_current_information_graph_encoder",
+    "02_uniform_delay_robustness",
+    "03_sector_specific_delay_gnnppo (written separately)",
+    "publication_tables",
+    "publication_figures"
+  ],
+  "python": "3.9.6",
+  "torch": "2.8.0",
+  "experiment_3": {
+    "policy": "Existing current-information-trained GNN-PPO checkpoints; no retraining.",
+    "reference": "tau0: all 24 nodes current.",
+    "sector_delay_definition": "sector_<water|energy|food>_tauN delays only that sector; every other node remains current.",
+    "node_delay_definition": "node_<node>_tauN delays exactly one node; every other node remains current.",
+    "delay_months": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "n_scenarios_including_reference": 136,
+    "n_annual_outcomes": 4080
+  },
+  "experiment_4": {
+    "policy": "Existing current-information-trained PPO checkpoints; no retraining.",
+    "reference": "tau0: all 24 nodes current.",
+    "sector_delay_definition": "sector_<water|energy|food>_tauN delays only that sector; every other node remains current.",
+    "node_delay_definition": "node_<node>_tauN delays exactly one node; every other node remains current.",
+    "delay_months": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "n_scenarios_including_reference": 136,
+    "n_annual_outcomes": 4080
+  }
+}

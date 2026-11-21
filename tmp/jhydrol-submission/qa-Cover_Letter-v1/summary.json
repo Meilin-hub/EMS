@@ -1,0 +1,13 @@
+{
+  "a_docx": "/Users/maylinlyu/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/assets/reference.docx",
+  "b_docx": "/Users/maylinlyu/Documents/PHD/p4/code1/latex1/output/submission/Journal_of_Hydrology_Cover_Letter.docx",
+  "pages_a": 4,
+  "pages_b": 1,
+  "changed_pages": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "num_changed_pages": 4
+}

@@ -1,0 +1,351 @@
+baseline,candidate,delay_scenario,delay_months,seed,metric,metric_label,unit,baseline_value,candidate_value,candidate_improvement,effect_orientation
+PPO,GNN-PPO,tau1,1,7,cost,Cost (-reward),normalized cost,0.5600978264504585,0.4628238982670458,0.09727392818341268,positive values favour candidate
+PPO,GNN-PPO,tau1,1,42,cost,Cost (-reward),normalized cost,0.5320930010258121,0.5431941493856404,-0.011101148359828228,positive values favour candidate
+PPO,GNN-PPO,tau1,1,73,cost,Cost (-reward),normalized cost,0.5507053687074704,0.5567023679374478,-0.005996999229977318,positive values favour candidate
+PPO,GNN-PPO,tau1,1,101,cost,Cost (-reward),normalized cost,0.5630960125252426,0.558737062411022,0.0043589501142206055,positive values favour candidate
+PPO,GNN-PPO,tau1,1,314,cost,Cost (-reward),normalized cost,0.5134059763954368,0.4697205957966814,0.04368538059875543,positive values favour candidate
+PPO,GNN-PPO,tau1,1,509,cost,Cost (-reward),normalized cost,0.5047200353298223,0.5198981868735106,-0.01517815154368829,positive values favour candidate
+PPO,GNN-PPO,tau1,1,1234,cost,Cost (-reward),normalized cost,0.5125395632175018,0.47027570101046895,0.042263862207032876,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2026,cost,Cost (-reward),normalized cost,0.5809453188218867,0.5962142472087962,-0.01526892838690952,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2718,cost,Cost (-reward),normalized cost,0.5365977435437398,0.43247063247832207,0.10412711106541772,positive values favour candidate
+PPO,GNN-PPO,tau1,1,4096,cost,Cost (-reward),normalized cost,0.5642048362039281,0.5397885388065785,0.02441629739734963,positive values favour candidate
+PPO,GNN-PPO,tau1,1,7,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.48321558715474,63.51986297019666,-1.0366473830419238,positive values favour candidate
+PPO,GNN-PPO,tau1,1,42,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.478390003872846,66.72839550125393,-3.250005497381082,positive values favour candidate
+PPO,GNN-PPO,tau1,1,73,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,66.65817365562778,68.62226750682782,-1.9640938512000474,positive values favour candidate
+PPO,GNN-PPO,tau1,1,101,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.35309099992378,66.53021470527403,-4.177123705350255,positive values favour candidate
+PPO,GNN-PPO,tau1,1,314,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.62807967550026,62.09350638434241,0.534573291157848,positive values favour candidate
+PPO,GNN-PPO,tau1,1,509,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.23984219919373,66.04349496574291,-1.8036527665491775,positive values favour candidate
+PPO,GNN-PPO,tau1,1,1234,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.421658264008215,61.92618322131991,1.4954750426883052,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2026,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.06845403909796,64.84819104021405,-0.7797370011160893,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2718,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,65.62835156447859,62.008319781904724,3.620031782573868,positive values favour candidate
+PPO,GNN-PPO,tau1,1,4096,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.9481988556965,62.10932181027564,2.8388770454208654,positive values favour candidate
+PPO,GNN-PPO,tau1,1,7,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,0.040838749122230796,3.1991612508777694,positive values favour candidate
+PPO,GNN-PPO,tau1,1,42,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,1.2639162562698938,0.7938247872951356,0.4700914689747582,positive values favour candidate
+PPO,GNN-PPO,tau1,1,73,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,1.798923541122737,1.5151492435065343,0.28377429761620254,positive values favour candidate
+PPO,GNN-PPO,tau1,1,101,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,1.6899425329493065,1.5500574670506937,positive values favour candidate
+PPO,GNN-PPO,tau1,1,314,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,509,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.9944398204765333,-0.9944398204765333,positive values favour candidate
+PPO,GNN-PPO,tau1,1,1234,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2026,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,3.24,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2718,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,1.1514390064351148,0.0,1.1514390064351148,positive values favour candidate
+PPO,GNN-PPO,tau1,1,4096,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,2.3959409203909434,3.24,-0.8440590796090568,positive values favour candidate
+PPO,GNN-PPO,tau1,1,7,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,42,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,73,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,101,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,314,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,100.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,509,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,91.66666666666667,-8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau1,1,1234,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,100.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2026,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2718,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,100.0,8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau1,1,4096,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,7,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,62.64459594169643,71.27717087153104,8.632574929834611,positive values favour candidate
+PPO,GNN-PPO,tau1,1,42,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.501474269457994,52.18908978252252,-4.312384486935471,positive values favour candidate
+PPO,GNN-PPO,tau1,1,73,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,58.20979173271661,56.67269361698616,-1.5370981157304513,positive values favour candidate
+PPO,GNN-PPO,tau1,1,101,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,61.29511788053063,53.83169301127719,-7.463424869253444,positive values favour candidate
+PPO,GNN-PPO,tau1,1,314,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,50.010953776377384,57.84873418422111,7.837780407843724,positive values favour candidate
+PPO,GNN-PPO,tau1,1,509,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,54.72308413992999,61.32565104340677,6.602566903476784,positive values favour candidate
+PPO,GNN-PPO,tau1,1,1234,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,51.65839468480035,53.29984869247634,1.6414540076759891,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2026,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,60.76934845244731,55.35484012995676,-5.414508322490548,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2718,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,55.83408080066415,70.95054090166222,15.116460100998076,positive values favour candidate
+PPO,GNN-PPO,tau1,1,4096,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.760679909065885,65.0211018189757,8.260421909909809,positive values favour candidate
+PPO,GNN-PPO,tau1,1,7,electricity_import_total,Electricity import,GWh yr-1,520.1490019663809,478.80623436690513,41.342767599475735,positive values favour candidate
+PPO,GNN-PPO,tau1,1,42,electricity_import_total,Electricity import,GWh yr-1,500.0,625.9498027493288,-125.9498027493288,positive values favour candidate
+PPO,GNN-PPO,tau1,1,73,electricity_import_total,Electricity import,GWh yr-1,500.974377845826,500.8254287687166,0.14894907710936423,positive values favour candidate
+PPO,GNN-PPO,tau1,1,101,electricity_import_total,Electricity import,GWh yr-1,797.1893413016505,500.0,297.18934130165053,positive values favour candidate
+PPO,GNN-PPO,tau1,1,314,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,509,electricity_import_total,Electricity import,GWh yr-1,310.2645198812986,500.0,-189.7354801187014,positive values favour candidate
+PPO,GNN-PPO,tau1,1,1234,electricity_import_total,Electricity import,GWh yr-1,489.15334646935844,500.0,-10.84665353064156,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2026,electricity_import_total,Electricity import,GWh yr-1,1000.0,1000.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2718,electricity_import_total,Electricity import,GWh yr-1,500.0,502.90254716839894,-2.9025471683989394,positive values favour candidate
+PPO,GNN-PPO,tau1,1,4096,electricity_import_total,Electricity import,GWh yr-1,500.0,626.3259317022462,-126.32593170224618,positive values favour candidate
+PPO,GNN-PPO,tau1,1,7,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.92202636411871,15.520946820785513,-1.4010795433331982,positive values favour candidate
+PPO,GNN-PPO,tau1,1,42,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.57871316197806,11.202844015351133,-4.375869146626927,positive values favour candidate
+PPO,GNN-PPO,tau1,1,73,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,11.295094120649521,8.654048647751997,-2.641045472897524,positive values favour candidate
+PPO,GNN-PPO,tau1,1,101,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,17.095507370507786,11.469561151970757,-5.625946218537029,positive values favour candidate
+PPO,GNN-PPO,tau1,1,314,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.732109132710413,17.44053980859212,0.7084306758817078,positive values favour candidate
+PPO,GNN-PPO,tau1,1,509,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.55573524774263,12.124594227597905,-2.431141020144725,positive values favour candidate
+PPO,GNN-PPO,tau1,1,1234,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.655413788543143,17.64775880527606,1.9923450167329158,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2026,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.788180090225714,13.733259091947403,-1.0549209982783108,positive values favour candidate
+PPO,GNN-PPO,tau1,1,2718,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,12.683999615970839,17.555200082777777,4.871200466806938,positive values favour candidate
+PPO,GNN-PPO,tau1,1,4096,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,13.602019290422774,17.419248334345486,3.817229043922712,positive values favour candidate
+PPO,GNN-PPO,tau2,2,7,cost,Cost (-reward),normalized cost,0.5588719956866187,0.4617612276722755,0.09711076801434321,positive values favour candidate
+PPO,GNN-PPO,tau2,2,42,cost,Cost (-reward),normalized cost,0.5803020348763541,0.5450573656167473,0.03524466925960679,positive values favour candidate
+PPO,GNN-PPO,tau2,2,73,cost,Cost (-reward),normalized cost,0.5644636790154909,0.5577174379463604,0.006746241069130465,positive values favour candidate
+PPO,GNN-PPO,tau2,2,101,cost,Cost (-reward),normalized cost,0.5615571042498027,0.5610220570897123,0.0005350471600903406,positive values favour candidate
+PPO,GNN-PPO,tau2,2,314,cost,Cost (-reward),normalized cost,0.512408574335959,0.4685064491241291,0.0439021252118299,positive values favour candidate
+PPO,GNN-PPO,tau2,2,509,cost,Cost (-reward),normalized cost,0.5047136452364666,0.519724405146282,-0.015010759909815485,positive values favour candidate
+PPO,GNN-PPO,tau2,2,1234,cost,Cost (-reward),normalized cost,0.5124004499653216,0.46987107288885094,0.0425293770764707,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2026,cost,Cost (-reward),normalized cost,0.5805935332359234,0.5959444895771039,-0.015350956341180444,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2718,cost,Cost (-reward),normalized cost,0.5393288139825265,0.430821108097526,0.10850770588500053,positive values favour candidate
+PPO,GNN-PPO,tau2,2,4096,cost,Cost (-reward),normalized cost,0.5844256555663633,0.5381626124170361,0.046263043149327165,positive values favour candidate
+PPO,GNN-PPO,tau2,2,7,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.58118924423809,63.53877400537993,-0.9575847611418382,positive values favour candidate
+PPO,GNN-PPO,tau2,2,42,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.51970073754769,66.73018291101761,-3.21048217346992,positive values favour candidate
+PPO,GNN-PPO,tau2,2,73,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,66.67825130490895,68.60284779585037,-1.9245964909414113,positive values favour candidate
+PPO,GNN-PPO,tau2,2,101,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.45489323372724,66.52650160164258,-4.0716083679153385,positive values favour candidate
+PPO,GNN-PPO,tau2,2,314,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.70774418515136,62.10526729032183,0.602476894829536,positive values favour candidate
+PPO,GNN-PPO,tau2,2,509,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.35049329444674,66.0501185924161,-1.6996252979693622,positive values favour candidate
+PPO,GNN-PPO,tau2,2,1234,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.455672467848196,62.005234360685705,1.4504381071624906,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2026,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.14261903989905,64.84874776129685,-0.7061287213978034,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2718,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,65.6366729324047,62.00558660276689,3.631086329637803,positive values favour candidate
+PPO,GNN-PPO,tau2,2,4096,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.97124667641717,62.109302840819545,2.8619438355976214,positive values favour candidate
+PPO,GNN-PPO,tau2,2,7,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,0.0069170545452556,3.2330829454547447,positive values favour candidate
+PPO,GNN-PPO,tau2,2,42,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.172719265566515,0.8524520431179168,2.320267222448598,positive values favour candidate
+PPO,GNN-PPO,tau2,2,73,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,2.3768812700451507,1.5777463600000194,0.7991349100451313,positive values favour candidate
+PPO,GNN-PPO,tau2,2,101,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,1.76983960113905,1.4701603988609502,positive values favour candidate
+PPO,GNN-PPO,tau2,2,314,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,509,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.9977292022308886,-0.9977292022308886,positive values favour candidate
+PPO,GNN-PPO,tau2,2,1234,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2026,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,3.24,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2718,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,1.2715508833380198,0.0,1.2715508833380198,positive values favour candidate
+PPO,GNN-PPO,tau2,2,4096,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,3.24,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,7,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,94.44444444444444,2.7777777777777715,positive values favour candidate
+PPO,GNN-PPO,tau2,2,42,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,73,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,101,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,314,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,100.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,509,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,91.66666666666667,-8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau2,2,1234,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,100.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2026,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2718,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,100.0,8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau2,2,4096,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,7,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,62.69759648764279,71.36497942163741,8.667382933994624,positive values favour candidate
+PPO,GNN-PPO,tau2,2,42,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.69525907670837,52.12520218748716,-4.570056889221206,positive values favour candidate
+PPO,GNN-PPO,tau2,2,73,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,58.56151087178748,56.841601702937986,-1.7199091688494974,positive values favour candidate
+PPO,GNN-PPO,tau2,2,101,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,61.55189242908717,53.779500591802595,-7.772391837284573,positive values favour candidate
+PPO,GNN-PPO,tau2,2,314,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,49.897857174690586,58.20526103636319,8.307403861672604,positive values favour candidate
+PPO,GNN-PPO,tau2,2,509,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,55.84905590833043,61.42688540729185,5.577829498961421,positive values favour candidate
+PPO,GNN-PPO,tau2,2,1234,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,51.64818300610026,53.30147527246555,1.6532922663652911,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2026,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,61.09306658805827,55.46719143807621,-5.625875149982058,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2718,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.06706522697184,70.92169998370623,14.854634756734391,positive values favour candidate
+PPO,GNN-PPO,tau2,2,4096,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,57.24622351543729,65.12658932793344,7.8803658124961515,positive values favour candidate
+PPO,GNN-PPO,tau2,2,7,electricity_import_total,Electricity import,GWh yr-1,513.8099379682541,490.04115620252855,23.76878176572552,positive values favour candidate
+PPO,GNN-PPO,tau2,2,42,electricity_import_total,Electricity import,GWh yr-1,500.0,641.6440977862235,-141.64409778622348,positive values favour candidate
+PPO,GNN-PPO,tau2,2,73,electricity_import_total,Electricity import,GWh yr-1,501.9836360390137,500.0,1.9836360390136747,positive values favour candidate
+PPO,GNN-PPO,tau2,2,101,electricity_import_total,Electricity import,GWh yr-1,872.102885523515,500.0,372.10288552351506,positive values favour candidate
+PPO,GNN-PPO,tau2,2,314,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,509,electricity_import_total,Electricity import,GWh yr-1,467.78392927804094,500.0,-32.216070721959056,positive values favour candidate
+PPO,GNN-PPO,tau2,2,1234,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2026,electricity_import_total,Electricity import,GWh yr-1,1000.0,1000.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2718,electricity_import_total,Electricity import,GWh yr-1,500.0,502.11134964644094,-2.1113496464409423,positive values favour candidate
+PPO,GNN-PPO,tau2,2,4096,electricity_import_total,Electricity import,GWh yr-1,500.0,657.6312709269959,-157.63127092699585,positive values favour candidate
+PPO,GNN-PPO,tau2,2,7,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.7916867193945,15.49548997225871,-1.2961967471357916,positive values favour candidate
+PPO,GNN-PPO,tau2,2,42,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.523448017087235,11.200436981200852,-4.323011035886383,positive values favour candidate
+PPO,GNN-PPO,tau2,2,73,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,11.267531815181263,8.680190538829967,-2.587341276351296,positive values favour candidate
+PPO,GNN-PPO,tau2,2,101,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.95926626878169,11.474557434058644,-5.484708834723046,positive values favour candidate
+PPO,GNN-PPO,tau2,2,314,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.628115833341457,17.424716436485145,0.7966006031436876,positive values favour candidate
+PPO,GNN-PPO,tau2,2,509,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.40792848265495,12.115678989937587,-2.292249492717364,positive values favour candidate
+PPO,GNN-PPO,tau2,2,1234,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.61007794170849,17.534473423919632,1.9243954822111426,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2026,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.689925657950686,13.732506650561314,-0.9574190073893725,positive values favour candidate
+PPO,GNN-PPO,tau2,2,2718,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,12.673016713981356,17.558876010036332,4.885859296054976,positive values favour candidate
+PPO,GNN-PPO,tau2,2,4096,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,13.572024533478446,17.419267443431796,3.8472429099533496,positive values favour candidate
+PPO,GNN-PPO,tau3,3,7,cost,Cost (-reward),normalized cost,0.5580396632624818,0.46198949151755464,0.09605017174492714,positive values favour candidate
+PPO,GNN-PPO,tau3,3,42,cost,Cost (-reward),normalized cost,0.581953327849572,0.5449810911343643,0.03697223671520766,positive values favour candidate
+PPO,GNN-PPO,tau3,3,73,cost,Cost (-reward),normalized cost,0.5691915057627467,0.5585260013977251,0.01066550436502156,positive values favour candidate
+PPO,GNN-PPO,tau3,3,101,cost,Cost (-reward),normalized cost,0.5617322495252806,0.5607830570499965,0.000949192475284022,positive values favour candidate
+PPO,GNN-PPO,tau3,3,314,cost,Cost (-reward),normalized cost,0.5109606593059245,0.4676114110017678,0.04334924830415671,positive values favour candidate
+PPO,GNN-PPO,tau3,3,509,cost,Cost (-reward),normalized cost,0.503411533998437,0.5202657042728766,-0.016854170274439584,positive values favour candidate
+PPO,GNN-PPO,tau3,3,1234,cost,Cost (-reward),normalized cost,0.5128762467289442,0.4697231970957831,0.04315304963316108,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2026,cost,Cost (-reward),normalized cost,0.58011564559122,0.5957358272650247,-0.015620181673804745,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2718,cost,Cost (-reward),normalized cost,0.5380387251971553,0.4298245466624644,0.10821417853469095,positive values favour candidate
+PPO,GNN-PPO,tau3,3,4096,cost,Cost (-reward),normalized cost,0.5836969075811007,0.5371323633646842,0.04656454421641654,positive values favour candidate
+PPO,GNN-PPO,tau3,3,7,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.62717190231728,63.55944342298735,-0.9322715206700707,positive values favour candidate
+PPO,GNN-PPO,tau3,3,42,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.56762635963463,66.73032789668632,-3.1627015370516887,positive values favour candidate
+PPO,GNN-PPO,tau3,3,73,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,66.70006212057719,68.57954134360672,-1.8794792230295343,positive values favour candidate
+PPO,GNN-PPO,tau3,3,101,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.52749686534134,66.52328847057393,-3.99579160523259,positive values favour candidate
+PPO,GNN-PPO,tau3,3,314,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.7514747074249,62.11700138262143,0.6344733248034657,positive values favour candidate
+PPO,GNN-PPO,tau3,3,509,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.42194660068405,66.05525695183597,-1.6333103511519198,positive values favour candidate
+PPO,GNN-PPO,tau3,3,1234,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.47662474097634,62.03787940443334,1.4387453365430005,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2026,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.20369886422475,64.84792319020393,-0.6442243259791809,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2718,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,65.6440979011061,62.00216339408644,3.6419345070196556,positive values favour candidate
+PPO,GNN-PPO,tau3,3,4096,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.9862807581532,62.11099794396461,2.875282814188587,positive values favour candidate
+PPO,GNN-PPO,tau3,3,7,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,0.0138620816988419,3.2261379183011583,positive values favour candidate
+PPO,GNN-PPO,tau3,3,42,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,0.8379242841608893,2.402075715839111,positive values favour candidate
+PPO,GNN-PPO,tau3,3,73,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,2.587060885029614,1.6302739143080212,0.956786970721593,positive values favour candidate
+PPO,GNN-PPO,tau3,3,101,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,1.7520496941026866,1.4879503058973136,positive values favour candidate
+PPO,GNN-PPO,tau3,3,314,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,509,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,1.0278208555306316,-1.0278208555306316,positive values favour candidate
+PPO,GNN-PPO,tau3,3,1234,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2026,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,3.24,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2718,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,1.2369659280466208,0.0,1.2369659280466208,positive values favour candidate
+PPO,GNN-PPO,tau3,3,4096,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,3.24,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,7,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,42,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,73,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,101,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,314,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,100.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,509,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,91.66666666666667,-8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau3,3,1234,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,100.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2026,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2718,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,100.0,8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau3,3,4096,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,7,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,62.717189575672215,71.40876437651822,8.691574800846006,positive values favour candidate
+PPO,GNN-PPO,tau3,3,42,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.80440672494698,52.07685824060659,-4.727548484340389,positive values favour candidate
+PPO,GNN-PPO,tau3,3,73,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,58.826695564086116,56.98924916111759,-1.8374464029685242,positive values favour candidate
+PPO,GNN-PPO,tau3,3,101,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,61.753417306889524,53.72611398757542,-8.027303319314107,positive values favour candidate
+PPO,GNN-PPO,tau3,3,314,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,49.800641020951836,58.5339551566664,8.733314135714565,positive values favour candidate
+PPO,GNN-PPO,tau3,3,509,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.48723120044909,61.51042505207608,5.023193851626992,positive values favour candidate
+PPO,GNN-PPO,tau3,3,1234,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,51.41992567129805,53.26476226279767,1.8448365914996145,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2026,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,61.36372719619928,55.54570883918359,-5.8180183570156885,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2718,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.284435887671386,70.89778623098262,14.613350343311232,positive values favour candidate
+PPO,GNN-PPO,tau3,3,4096,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,57.56566246816997,65.20467361183923,7.639011143669258,positive values favour candidate
+PPO,GNN-PPO,tau3,3,7,electricity_import_total,Electricity import,GWh yr-1,502.5756869325694,500.293717106242,2.2819698263273835,positive values favour candidate
+PPO,GNN-PPO,tau3,3,42,electricity_import_total,Electricity import,GWh yr-1,500.0,653.6448216823713,-153.64482168237134,positive values favour candidate
+PPO,GNN-PPO,tau3,3,73,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,101,electricity_import_total,Electricity import,GWh yr-1,912.9032033873455,500.0,412.90320338734546,positive values favour candidate
+PPO,GNN-PPO,tau3,3,314,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,509,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,1234,electricity_import_total,Electricity import,GWh yr-1,500.0,490.21155054798805,9.788449452011946,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2026,electricity_import_total,Electricity import,GWh yr-1,1000.0,1000.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2718,electricity_import_total,Electricity import,GWh yr-1,500.0,501.0467681580187,-1.0467681580187218,positive values favour candidate
+PPO,GNN-PPO,tau3,3,4096,electricity_import_total,Electricity import,GWh yr-1,500.0,679.9462494186306,-179.9462494186306,positive values favour candidate
+PPO,GNN-PPO,tau3,3,7,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.730529217948085,15.467674105822624,-1.262855112125461,positive values favour candidate
+PPO,GNN-PPO,tau3,3,42,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.459276366551622,11.200235999921063,-4.259040366630559,positive values favour candidate
+PPO,GNN-PPO,tau3,3,73,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,11.237818108189936,8.711556253228247,-2.526261854961689,positive values favour candidate
+PPO,GNN-PPO,tau3,3,101,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.86201544715726,11.478880548563358,-5.3831348985939,positive values favour candidate
+PPO,GNN-PPO,tau3,3,314,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.57149997102164,17.40892804705778,0.8374280760361401,positive values favour candidate
+PPO,GNN-PPO,tau3,3,509,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.312482967266533,12.108763269378272,-2.2037196978882605,positive values favour candidate
+PPO,GNN-PPO,tau3,3,1234,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.58212164499034,17.48769152534984,1.9055698803595025,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2026,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.608853256972859,13.733612558374185,-0.8752406985986738,positive values favour candidate
+PPO,GNN-PPO,tau3,3,2718,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,12.663203547709463,17.563480273981252,4.900276726271789,positive values favour candidate
+PPO,GNN-PPO,tau3,3,4096,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,13.552626654194837,17.416982690327945,3.864356036133108,positive values favour candidate
+PPO,GNN-PPO,tau4,4,7,cost,Cost (-reward),normalized cost,0.5580388996631228,0.4634427703307578,0.094596129332365,positive values favour candidate
+PPO,GNN-PPO,tau4,4,42,cost,Cost (-reward),normalized cost,0.5816515274613581,0.5465090036565691,0.035142523804788994,positive values favour candidate
+PPO,GNN-PPO,tau4,4,73,cost,Cost (-reward),normalized cost,0.5685329095537855,0.5581754543392531,0.010357455214532463,positive values favour candidate
+PPO,GNN-PPO,tau4,4,101,cost,Cost (-reward),normalized cost,0.5628928656594615,0.5590313157324146,0.0038615499270469034,positive values favour candidate
+PPO,GNN-PPO,tau4,4,314,cost,Cost (-reward),normalized cost,0.5120218575015906,0.46699464757161874,0.045027209929971834,positive values favour candidate
+PPO,GNN-PPO,tau4,4,509,cost,Cost (-reward),normalized cost,0.515036486177393,0.5213230895489122,-0.006286603371519206,positive values favour candidate
+PPO,GNN-PPO,tau4,4,1234,cost,Cost (-reward),normalized cost,0.5134108035650029,0.46965259800956344,0.04375820555543947,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2026,cost,Cost (-reward),normalized cost,0.5793279747931014,0.5956041872583597,-0.016276212465258344,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2718,cost,Cost (-reward),normalized cost,0.5383689887190981,0.4291375885702813,0.10923140014881683,positive values favour candidate
+PPO,GNN-PPO,tau4,4,4096,cost,Cost (-reward),normalized cost,0.5831183838485076,0.536592807109427,0.04652557673908053,positive values favour candidate
+PPO,GNN-PPO,tau4,4,7,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.62717190231728,63.55944342298735,-0.9322715206700707,positive values favour candidate
+PPO,GNN-PPO,tau4,4,42,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.56762635963463,66.73032789668633,-3.162701537051703,positive values favour candidate
+PPO,GNN-PPO,tau4,4,73,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,66.70006212057719,68.57954134360672,-1.8794792230295343,positive values favour candidate
+PPO,GNN-PPO,tau4,4,101,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.527496865341334,66.52328847057393,-3.995791605232597,positive values favour candidate
+PPO,GNN-PPO,tau4,4,314,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.751474707424904,62.11700138262143,0.6344733248034728,positive values favour candidate
+PPO,GNN-PPO,tau4,4,509,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.42194660068405,66.05525695183597,-1.6333103511519198,positive values favour candidate
+PPO,GNN-PPO,tau4,4,1234,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.47662474097634,62.04444108861093,1.43218365236541,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2026,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.20369886422475,64.84792319020393,-0.6442243259791809,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2718,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,65.6440979011061,62.002163394086445,3.6419345070196485,positive values favour candidate
+PPO,GNN-PPO,tau4,4,4096,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.9862807581532,62.11099794396461,2.875282814188587,positive values favour candidate
+PPO,GNN-PPO,tau4,4,7,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,0.0744911855982186,3.1655088144017816,positive values favour candidate
+PPO,GNN-PPO,tau4,4,42,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,0.895150769638553,2.344849230361447,positive values favour candidate
+PPO,GNN-PPO,tau4,4,73,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,2.562969875974176,1.627576774512882,0.9353931014612942,positive values favour candidate
+PPO,GNN-PPO,tau4,4,101,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,1.6757309771034061,1.564269022896594,positive values favour candidate
+PPO,GNN-PPO,tau4,4,314,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.047349363326280834,0.0,0.047349363326280834,positive values favour candidate
+PPO,GNN-PPO,tau4,4,509,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.5091164024392025,1.0767141822291697,-0.5675977797899672,positive values favour candidate
+PPO,GNN-PPO,tau4,4,1234,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2026,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,3.24,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2718,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,1.2647795399342747,0.0,1.2647795399342747,positive values favour candidate
+PPO,GNN-PPO,tau4,4,4096,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.2432333840408565,3.24,0.0032333840408562686,positive values favour candidate
+PPO,GNN-PPO,tau4,4,7,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,42,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,73,ecological_flow_reliability_pct,Ecological flow reliability,%,83.33333333333334,91.66666666666667,8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau4,4,101,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,314,ecological_flow_reliability_pct,Ecological flow reliability,%,97.22222222222221,100.0,2.7777777777777857,positive values favour candidate
+PPO,GNN-PPO,tau4,4,509,ecological_flow_reliability_pct,Ecological flow reliability,%,88.88888888888887,91.66666666666667,2.7777777777778,positive values favour candidate
+PPO,GNN-PPO,tau4,4,1234,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,100.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2026,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2718,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,100.0,8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau4,4,4096,ecological_flow_reliability_pct,Ecological flow reliability,%,88.88888888888887,91.66666666666667,2.7777777777778,positive values favour candidate
+PPO,GNN-PPO,tau4,4,7,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,62.64897535219171,71.43891795867923,8.789942606487514,positive values favour candidate
+PPO,GNN-PPO,tau4,4,42,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.857147435911976,52.10788366303428,-4.749263772877697,positive values favour candidate
+PPO,GNN-PPO,tau4,4,73,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,58.90092937698959,57.11132169446832,-1.7896076825212646,positive values favour candidate
+PPO,GNN-PPO,tau4,4,101,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,61.87662963611658,53.65964572428322,-8.21698391183336,positive values favour candidate
+PPO,GNN-PPO,tau4,4,314,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,49.60162809434781,58.79632267701522,9.19469458266741,positive values favour candidate
+PPO,GNN-PPO,tau4,4,509,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.83749530636902,61.57056915582731,4.733073849458286,positive values favour candidate
+PPO,GNN-PPO,tau4,4,1234,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,51.18799625697361,53.13068327712093,1.9426870201473179,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2026,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,61.56959310735349,55.597682075894774,-5.971911031458717,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2718,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.464129332822836,70.93329390838372,14.469164575560882,positive values favour candidate
+PPO,GNN-PPO,tau4,4,4096,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,57.80611313418472,65.25977932602956,7.453666191844839,positive values favour candidate
+PPO,GNN-PPO,tau4,4,7,electricity_import_total,Electricity import,GWh yr-1,500.0,503.7685089520248,-3.7685089520247743,positive values favour candidate
+PPO,GNN-PPO,tau4,4,42,electricity_import_total,Electricity import,GWh yr-1,500.0,661.7729924916848,-161.77299249168482,positive values favour candidate
+PPO,GNN-PPO,tau4,4,73,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,101,electricity_import_total,Electricity import,GWh yr-1,929.848699157489,495.8996696484073,433.9490295090817,positive values favour candidate
+PPO,GNN-PPO,tau4,4,314,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,509,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,1234,electricity_import_total,Electricity import,GWh yr-1,500.0,456.7821488111604,43.217851188839575,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2026,electricity_import_total,Electricity import,GWh yr-1,1000.0,1000.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2718,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau4,4,4096,electricity_import_total,Electricity import,GWh yr-1,500.0,694.9809092711597,-194.9809092711597,positive values favour candidate
+PPO,GNN-PPO,tau4,4,7,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.73052921794809,15.467674105822619,-1.2628551121254699,positive values favour candidate
+PPO,GNN-PPO,tau4,4,42,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.45927636655162,11.20023599992106,-4.259040366630559,positive values favour candidate
+PPO,GNN-PPO,tau4,4,73,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,11.237818108189936,8.711556253228247,-2.526261854961689,positive values favour candidate
+PPO,GNN-PPO,tau4,4,101,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.862015447157265,11.478880548563358,-5.383134898593907,positive values favour candidate
+PPO,GNN-PPO,tau4,4,314,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.571499971021638,17.40892804705778,0.8374280760361437,positive values favour candidate
+PPO,GNN-PPO,tau4,4,509,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.312482967266531,12.108763269378272,-2.2037196978882587,positive values favour candidate
+PPO,GNN-PPO,tau4,4,1234,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.58212164499034,17.478267810317686,1.8961461653273464,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2026,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.608853256972857,13.733612558374185,-0.875240698598672,positive values favour candidate
+PPO,GNN-PPO,tau4,4,2718,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,12.66320354770946,17.563480273981245,4.900276726271786,positive values favour candidate
+PPO,GNN-PPO,tau4,4,4096,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,13.552626654194837,17.416982690327945,3.864356036133108,positive values favour candidate
+PPO,GNN-PPO,tau5,5,7,cost,Cost (-reward),normalized cost,0.558819286088351,0.4634403973684549,0.09537888871989608,positive values favour candidate
+PPO,GNN-PPO,tau5,5,42,cost,Cost (-reward),normalized cost,0.5816304661047897,0.5465012833610515,0.03512918274373822,positive values favour candidate
+PPO,GNN-PPO,tau5,5,73,cost,Cost (-reward),normalized cost,0.5427582830873358,0.5579437525198108,-0.015185469432475007,positive values favour candidate
+PPO,GNN-PPO,tau5,5,101,cost,Cost (-reward),normalized cost,0.564739942457294,0.5591608342483321,0.005579108208961903,positive values favour candidate
+PPO,GNN-PPO,tau5,5,314,cost,Cost (-reward),normalized cost,0.5115615600894314,0.4668612237370498,0.04470033635238163,positive values favour candidate
+PPO,GNN-PPO,tau5,5,509,cost,Cost (-reward),normalized cost,0.5207963415221682,0.5211938988317911,-0.0003975573096228757,positive values favour candidate
+PPO,GNN-PPO,tau5,5,1234,cost,Cost (-reward),normalized cost,0.5140085981752777,0.46960177216969473,0.04440682600558293,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2026,cost,Cost (-reward),normalized cost,0.5789367087101357,0.595584137028856,-0.016647428318720348,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2718,cost,Cost (-reward),normalized cost,0.5380640223613519,0.4290030163860817,0.10906100597527019,positive values favour candidate
+PPO,GNN-PPO,tau5,5,4096,cost,Cost (-reward),normalized cost,0.5826563172132163,0.5364572966593323,0.04619902055388403,positive values favour candidate
+PPO,GNN-PPO,tau5,5,7,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.62717190231728,63.55944342298735,-0.9322715206700707,positive values favour candidate
+PPO,GNN-PPO,tau5,5,42,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.56762635963463,66.73032789668633,-3.162701537051703,positive values favour candidate
+PPO,GNN-PPO,tau5,5,73,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,66.70006212057719,68.57954134360672,-1.8794792230295343,positive values favour candidate
+PPO,GNN-PPO,tau5,5,101,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.527496865341334,66.52328847057393,-3.995791605232597,positive values favour candidate
+PPO,GNN-PPO,tau5,5,314,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,62.7514747074249,62.117001382621424,0.6344733248034728,positive values favour candidate
+PPO,GNN-PPO,tau5,5,509,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.42194660068405,66.05525695183597,-1.6333103511519198,positive values favour candidate
+PPO,GNN-PPO,tau5,5,1234,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,63.47662474097634,62.04393340338993,1.4326913375864123,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2026,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.20369886422475,64.84792319020393,-0.6442243259791809,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2718,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,65.6440979011061,62.002163394086445,3.6419345070196485,positive values favour candidate
+PPO,GNN-PPO,tau5,5,4096,crop_deficit_total,Annual irrigation water deficit,1e8 m3 yr-1,64.9862807581532,62.110997943964605,2.875282814188594,positive values favour candidate
+PPO,GNN-PPO,tau5,5,7,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,0.0744911855982186,3.1655088144017816,positive values favour candidate
+PPO,GNN-PPO,tau5,5,42,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,0.895150769638553,2.344849230361447,positive values favour candidate
+PPO,GNN-PPO,tau5,5,73,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,1.5383665501863255,1.627576774512882,-0.08921022432655645,positive values favour candidate
+PPO,GNN-PPO,tau5,5,101,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,1.6757309771034061,1.564269022896594,positive values favour candidate
+PPO,GNN-PPO,tau5,5,314,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,509,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.735887149141479,1.0767141822291697,-0.3408270330876907,positive values favour candidate
+PPO,GNN-PPO,tau5,5,1234,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,0.0,0.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2026,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.24,3.241648125831889,-0.0016481258318887804,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2718,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,1.2647795399342747,0.0,1.2647795399342747,positive values favour candidate
+PPO,GNN-PPO,tau5,5,4096,ecological_deficit_total,Annual ecological-flow deficit volume,1e8 m3 yr-1,3.2432333840408565,3.24,0.0032333840408562686,positive values favour candidate
+PPO,GNN-PPO,tau5,5,7,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,42,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,73,ecological_flow_reliability_pct,Ecological flow reliability,%,83.33333333333334,91.66666666666667,8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau5,5,101,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,91.66666666666667,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,314,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,100.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,509,ecological_flow_reliability_pct,Ecological flow reliability,%,88.88888888888887,91.66666666666667,2.7777777777778,positive values favour candidate
+PPO,GNN-PPO,tau5,5,1234,ecological_flow_reliability_pct,Ecological flow reliability,%,100.0,100.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2026,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,88.88888888888887,-2.7777777777778,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2718,ecological_flow_reliability_pct,Ecological flow reliability,%,91.66666666666667,100.0,8.333333333333329,positive values favour candidate
+PPO,GNN-PPO,tau5,5,4096,ecological_flow_reliability_pct,Ecological flow reliability,%,88.88888888888887,91.66666666666667,2.7777777777778,positive values favour candidate
+PPO,GNN-PPO,tau5,5,7,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,62.53781495061214,71.43831488226073,8.90049993164859,positive values favour candidate
+PPO,GNN-PPO,tau5,5,42,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.86789890456857,52.143635386066045,-4.724263518502525,positive values favour candidate
+PPO,GNN-PPO,tau5,5,73,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,58.820087151085325,57.20714676394753,-1.6129403871377974,positive values favour candidate
+PPO,GNN-PPO,tau5,5,101,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,61.93656612697034,53.55353658812812,-8.383029538842223,positive values favour candidate
+PPO,GNN-PPO,tau5,5,314,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,49.415379868026946,58.97625979959124,9.560879931564294,positive values favour candidate
+PPO,GNN-PPO,tau5,5,509,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.90867881400251,61.61394429993718,4.705265485934667,positive values favour candidate
+PPO,GNN-PPO,tau5,5,1234,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,50.99108250072813,53.00770990311886,2.016627402390725,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2026,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,61.71541391256562,55.62282064029781,-6.092593272267813,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2718,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,56.60254321095376,70.95746335555066,14.354920144596896,positive values favour candidate
+PPO,GNN-PPO,tau5,5,4096,energy_demand_satisfaction_ratio_pct,Energy-demand satisfaction ratio,%,57.98959620508406,65.29719475523419,7.307598550150125,positive values favour candidate
+PPO,GNN-PPO,tau5,5,7,electricity_import_total,Electricity import,GWh yr-1,500.0,503.2708575115187,-3.2708575115187273,positive values favour candidate
+PPO,GNN-PPO,tau5,5,42,electricity_import_total,Electricity import,GWh yr-1,500.0,666.686069496032,-166.68606949603202,positive values favour candidate
+PPO,GNN-PPO,tau5,5,73,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,101,electricity_import_total,Electricity import,GWh yr-1,930.3623452312037,479.92405992338445,450.4382853078192,positive values favour candidate
+PPO,GNN-PPO,tau5,5,314,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,509,electricity_import_total,Electricity import,GWh yr-1,500.0,500.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,1234,electricity_import_total,Electricity import,GWh yr-1,500.0,426.1669429549772,73.83305704502283,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2026,electricity_import_total,Electricity import,GWh yr-1,1000.0,1000.0,0.0,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2718,electricity_import_total,Electricity import,GWh yr-1,497.79843041585644,500.0,-2.201569584143556,positive values favour candidate
+PPO,GNN-PPO,tau5,5,4096,electricity_import_total,Electricity import,GWh yr-1,500.0,700.9487712172062,-200.94877121720617,positive values favour candidate
+PPO,GNN-PPO,tau5,5,7,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.73052921794809,15.46767410582263,-1.2628551121254592,positive values favour candidate
+PPO,GNN-PPO,tau5,5,42,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.459276366551626,11.20023599992106,-4.259040366630565,positive values favour candidate
+PPO,GNN-PPO,tau5,5,73,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,11.237818108189936,8.711556253228247,-2.526261854961689,positive values favour candidate
+PPO,GNN-PPO,tau5,5,101,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.862015447157265,11.478880548563358,-5.383134898593907,positive values favour candidate
+PPO,GNN-PPO,tau5,5,314,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,16.57149997102164,17.40892804705779,0.8374280760361472,positive values favour candidate
+PPO,GNN-PPO,tau5,5,509,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.312482967266531,12.108763269378272,-2.2037196978882587,positive values favour candidate
+PPO,GNN-PPO,tau5,5,1234,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,15.58212164499034,17.478996808604105,1.8968751636137657,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2026,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,14.608853256972859,13.733612558374185,-0.8752406985986738,positive values favour candidate
+PPO,GNN-PPO,tau5,5,2718,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,12.66320354770946,17.563480273981245,4.900276726271786,positive values favour candidate
+PPO,GNN-PPO,tau5,5,4096,irrigation_satisfaction_ratio_pct,Irrigation satisfaction ratio,%,13.552626654194837,17.416982690327952,3.864356036133115,positive values favour candidate

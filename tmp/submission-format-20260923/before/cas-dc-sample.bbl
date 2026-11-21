@@ -1,0 +1,339 @@
+\begin{thebibliography}{57}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Agarwal and Aggarwal(2021)}]{Agarwal2021DelayedObservations}
+\bibinfo{author}{Agarwal, M.}, \bibinfo{author}{Aggarwal, V.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Blind decision making: Reinforcement learning with delayed observations}.
+\newblock \bibinfo{journal}{Pattern Recognition Letters} \bibinfo{volume}{150}, \bibinfo{pages}{176--182}.
+\newblock \DOIprefix\doi{10.1016/j.patrec.2021.06.022}.
+%Type = Article
+\bibitem[{Albrecht et~al.(2018)Albrecht, Crootof and Scott}]{albrecht2018}
+\bibinfo{author}{Albrecht, T.R.}, \bibinfo{author}{Crootof, A.}, \bibinfo{author}{Scott, C.A.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{The water--energy--food nexus: A systematic review of methods for nexus assessment}.
+\newblock \bibinfo{journal}{Environmental Research Letters} \bibinfo{volume}{13}, \bibinfo{pages}{043002}.
+\newblock \DOIprefix\doi{10.1088/1748-9326/aaa9c6}.
+%Type = Techreport
+\bibitem[{Allen et~al.(1998)Allen, Pereira, Raes and Smith}]{Allen1998FAO56}
+\bibinfo{author}{Allen, R.G.}, \bibinfo{author}{Pereira, L.S.}, \bibinfo{author}{Raes, D.}, \bibinfo{author}{Smith, M.}, \bibinfo{year}{1998}.
+\newblock \bibinfo{title}{Crop Evapotranspiration: Guidelines for Computing Crop Water Requirements}.
+\newblock \bibinfo{type}{Technical Report} \bibinfo{number}{56}. Food and Agriculture Organization of the United Nations. \bibinfo{address}{Rome}.
+\newblock \URLprefix \url{https://www.fao.org/4/X0490E/X0490E00.htm}.
+%Type = Article
+\bibitem[{Bazilian et~al.(2011)Bazilian, Rogner, Howells, Hermann, Arent, Gielen, Steduto, Mueller, Komor, Tol and Yumkella}]{bazilian2011}
+\bibinfo{author}{Bazilian, M.}, \bibinfo{author}{Rogner, H.}, \bibinfo{author}{Howells, M.}, \bibinfo{author}{Hermann, S.}, \bibinfo{author}{Arent, D.}, \bibinfo{author}{Gielen, D.}, \bibinfo{author}{Steduto, P.}, \bibinfo{author}{Mueller, A.}, \bibinfo{author}{Komor, P.}, \bibinfo{author}{Tol, R.S.J.}, \bibinfo{author}{Yumkella, K.K.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Considering the energy, water and food nexus: Towards an integrated modelling approach}.
+\newblock \bibinfo{journal}{Energy Policy} \bibinfo{volume}{39}, \bibinfo{pages}{7896--7906}.
+\newblock \DOIprefix\doi{10.1016/j.enpol.2011.09.039}.
+%Type = Article
+\bibitem[{Castelletti et~al.(2013)Castelletti, Pianosi and Restelli}]{Castelletti2013MultiobjectiveRL}
+\bibinfo{author}{Castelletti, A.}, \bibinfo{author}{Pianosi, F.}, \bibinfo{author}{Restelli, M.}, \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{A multiobjective reinforcement learning approach to water resources systems operation: Pareto frontier approximation in a single run}.
+\newblock \bibinfo{journal}{Water Resources Research} \bibinfo{volume}{49}, \bibinfo{pages}{3476--3486}.
+\newblock \DOIprefix\doi{10.1002/wrcr.20295}.
+%Type = Misc
+\bibitem[{{Department of Water Resources of Ningxia Hui Autonomous Region}(2005--2022)}]{NingxiaWaterBulletins}
+\bibinfo{author}{{Department of Water Resources of Ningxia Hui Autonomous Region}}, \bibinfo{year}{2005--2022}.
+\newblock \bibinfo{title}{Ningxia water resources bulletins, 2005--2021 editions}.
+\newblock \URLprefix \url{https://slt.nx.gov.cn/xxgk_281/fdzdgknr/gbxx/szygb/}.
+%Type = Misc
+\bibitem[{{Department of Water Resources of Ningxia Hui Autonomous Region}(2017)}]{NingxiaCanals2017}
+\bibinfo{author}{{Department of Water Resources of Ningxia Hui Autonomous Region}}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Ancient yellow river irrigation canals in ningxia and their irrigation capacity}.
+\newblock \URLprefix \url{https://slt.nx.gov.cn/slxc/gzdt/slyw/202104/t20210409_2733861.html}.
+%Type = Article
+\bibitem[{Di~Martino et~al.(2023)Di~Martino, Linke and Pistikopoulos}]{DiMartino2023FEWNOptimizationReview}
+\bibinfo{author}{Di~Martino, M.}, \bibinfo{author}{Linke, P.}, \bibinfo{author}{Pistikopoulos, E.N.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{A comprehensive classification of food-energy-water nexus optimization studies: State of the art}.
+\newblock \bibinfo{journal}{Journal of Cleaner Production} \bibinfo{volume}{420}, \bibinfo{pages}{138293}.
+\newblock \DOIprefix\doi{10.1016/j.jclepro.2023.138293}.
+%Type = Article
+\bibitem[{Di~Martino et~al.(2025)Di~Martino, Namany, Mahmood, Al-Ansari, Linke and Pistikopoulos}]{dimartino2025}
+\bibinfo{author}{Di~Martino, M.}, \bibinfo{author}{Namany, S.}, \bibinfo{author}{Mahmood, F.}, \bibinfo{author}{Al-Ansari, T.}, \bibinfo{author}{Linke, P.}, \bibinfo{author}{Pistikopoulos, E.N.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Food--energy--water nexus considerations in optimal greenhouse farming systems design and operation}.
+\newblock \bibinfo{journal}{Applied Energy} \bibinfo{volume}{379}, \bibinfo{pages}{124900}.
+\newblock \DOIprefix\doi{10.1016/j.apenergy.2024.124900}.
+%Type = Article
+\bibitem[{Feng et~al.(2025)Feng, Miao, Shi, Gon{\c{c}}alves and Li}]{Feng2025Hetao}
+\bibinfo{author}{Feng, Z.}, \bibinfo{author}{Miao, Q.}, \bibinfo{author}{Shi, H.}, \bibinfo{author}{Gon{\c{c}}alves, J.M.}, \bibinfo{author}{Li, R.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Water saving and environmental issues in the hetao irrigation district, the yellow river basin: Development perspective analysis}.
+\newblock \bibinfo{journal}{Agronomy} \bibinfo{volume}{15}, \bibinfo{pages}{1654}.
+\newblock \DOIprefix\doi{10.3390/agronomy15071654}.
+%Type = Misc
+\bibitem[{{Food and Agriculture Organization of the United Nations}(2009)}]{FAOCROPWAT}
+\bibinfo{author}{{Food and Agriculture Organization of the United Nations}}, \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{{CROPWAT} 8.0 for windows}.
+\newblock \URLprefix \url{https://www.fao.org/land-water/databases-and-software/cropwat/en/}.
+%Type = Inproceedings
+\bibitem[{Haarnoja et~al.(2018)Haarnoja, Zhou, Abbeel and Levine}]{haarnoja2018}
+\bibinfo{author}{Haarnoja, T.}, \bibinfo{author}{Zhou, A.}, \bibinfo{author}{Abbeel, P.}, \bibinfo{author}{Levine, S.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Soft actor-critic: Off-policy maximum entropy deep reinforcement learning with a stochastic actor}, in: \bibinfo{booktitle}{Proceedings of the 35th International Conference on Machine Learning}, pp. \bibinfo{pages}{1861--1870}.
+\newblock \URLprefix \url{https://proceedings.mlr.press/v80/haarnoja18b.html}.
+%Type = Article
+\bibitem[{Han et~al.(2024)Han, Hua, Guan, Engel, Liu, Bai, Sun and Wang}]{han2024}
+\bibinfo{author}{Han, X.}, \bibinfo{author}{Hua, E.}, \bibinfo{author}{Guan, J.}, \bibinfo{author}{Engel, B.A.}, \bibinfo{author}{Liu, R.}, \bibinfo{author}{Bai, Y.}, \bibinfo{author}{Sun, S.}, \bibinfo{author}{Wang, Y.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Development of a method to assess synergy and competition for water use among water-energy-food nexus in the yellow river basin: Water quantity--quality dimensions}.
+\newblock \bibinfo{journal}{Journal of Hydrology} \bibinfo{volume}{639}, \bibinfo{pages}{131607}.
+\newblock \DOIprefix\doi{10.1016/j.jhydrol.2024.131607}.
+%Type = Techreport
+\bibitem[{Hoff(2011)}]{hoff2011}
+\bibinfo{author}{Hoff, H.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Understanding the Nexus: Background Paper for the Bonn 2011 Nexus Conference}.
+\newblock \bibinfo{type}{Technical Report}. Stockholm Environment Institute. \bibinfo{address}{Stockholm}.
+\newblock \URLprefix \url{https://mediamanager.sei.org/documents/Publications/SEI-Paper-Hoff-UnderstandingTheNexus-2011.pdf}.
+%Type = Article
+\bibitem[{Hong et~al.(2024)Hong, Zhang, Ma, Wei and Cao}]{hong2024}
+\bibinfo{author}{Hong, K.}, \bibinfo{author}{Zhang, W.}, \bibinfo{author}{Ma, A.}, \bibinfo{author}{Wei, Y.}, \bibinfo{author}{Cao, M.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Multi-objective synergetic operation for cascade reservoirs in the upper yellow river}.
+\newblock \bibinfo{journal}{Water} \bibinfo{volume}{16}, \bibinfo{pages}{1416}.
+\newblock \DOIprefix\doi{10.3390/w16101416}.
+%Type = Article
+\bibitem[{Hooshyar et~al.(2020)Hooshyar, Mousavi, Mahootchi and Ponnambalam}]{hooshyar2020}
+\bibinfo{author}{Hooshyar, M.}, \bibinfo{author}{Mousavi, S.J.}, \bibinfo{author}{Mahootchi, M.}, \bibinfo{author}{Ponnambalam, K.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Aggregation--decomposition-based multi-agent reinforcement learning for multi-reservoir operations optimization}.
+\newblock \bibinfo{journal}{Water} \bibinfo{volume}{12}, \bibinfo{pages}{2688}.
+\newblock \DOIprefix\doi{10.3390/w12102688}.
+%Type = Inproceedings
+\bibitem[{Jiang et~al.(2020)Jiang, Dun, Huang and Lu}]{jiang2020}
+\bibinfo{author}{Jiang, J.}, \bibinfo{author}{Dun, C.}, \bibinfo{author}{Huang, T.}, \bibinfo{author}{Lu, Z.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Graph convolutional reinforcement learning}, in: \bibinfo{booktitle}{International Conference on Learning Representations}.
+\newblock \URLprefix \url{https://openreview.net/forum?id=HkxdQkSYDB}.
+%Type = Article
+\bibitem[{Lee et~al.(2022)Lee, Sarkar and Wang}]{Lee2022GraphPolicyVoltVar}
+\bibinfo{author}{Lee, X.Y.}, \bibinfo{author}{Sarkar, S.}, \bibinfo{author}{Wang, Y.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{A graph policy network approach for volt-var control in power distribution systems}.
+\newblock \bibinfo{journal}{Applied Energy} \bibinfo{volume}{323}, \bibinfo{pages}{119530}.
+\newblock \DOIprefix\doi{10.1016/j.apenergy.2022.119530}.
+%Type = Article
+\bibitem[{Liao et~al.(2022)Liao, Mahmoud, Hu and Wang}]{Liao2022CanalScheduling}
+\bibinfo{author}{Liao, X.}, \bibinfo{author}{Mahmoud, A.}, \bibinfo{author}{Hu, T.}, \bibinfo{author}{Wang, J.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{A novel irrigation canal scheduling model adaptable to the spatial-temporal variability of water conveyance loss}.
+\newblock \bibinfo{journal}{Agricultural Water Management} \bibinfo{volume}{274}, \bibinfo{pages}{107961}.
+\newblock \DOIprefix\doi{10.1016/j.agwat.2022.107961}.
+%Type = Article
+\bibitem[{Liu et~al.(2019)Liu, Yang, Tang and Liu}]{liu2019}
+\bibinfo{author}{Liu, W.}, \bibinfo{author}{Yang, H.}, \bibinfo{author}{Tang, Q.}, \bibinfo{author}{Liu, X.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Understanding the water--food--energy nexus for supporting sustainable food production and conserving hydropower potential in china}.
+\newblock \bibinfo{journal}{Frontiers in Environmental Science} \bibinfo{volume}{7}, \bibinfo{pages}{50}.
+\newblock \DOIprefix\doi{10.3389/fenvs.2019.00050}.
+%Type = Article
+\bibitem[{Lu et~al.(2021)Lu, Cai, Shao, Taghizadeh-Hesary, Faisal, Zhang and Xue}]{Lu2021EcologicalFlow}
+\bibinfo{author}{Lu, S.}, \bibinfo{author}{Cai, W.}, \bibinfo{author}{Shao, W.}, \bibinfo{author}{Taghizadeh-Hesary, F.}, \bibinfo{author}{Faisal, M.}, \bibinfo{author}{Zhang, H.}, \bibinfo{author}{Xue, Y.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Ecological water requirement in upper and middle reaches of the yellow river based on flow components and hydraulic index}.
+\newblock \bibinfo{journal}{International Journal of Environmental Research and Public Health} \bibinfo{volume}{18}, \bibinfo{pages}{10956}.
+\newblock \DOIprefix\doi{10.3390/ijerph182010956}.
+%Type = Article
+\bibitem[{Lyu and Tan(2026)}]{lyureview2026}
+\bibinfo{author}{Lyu, M.}, \bibinfo{author}{Tan, A.H.P.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{The water-food-energy nexus in china: A systematic review of nexus and methodologies}.
+\newblock \bibinfo{journal}{Sustainable Water Resources Management} \bibinfo{volume}{12}, \bibinfo{pages}{33}.
+\newblock \DOIprefix\doi{10.1007/s40899-026-01343-7}.
+%Type = Article
+\bibitem[{Lyu et~al.(2026)Lyu, Tan, Chen and El-Bouri}]{lyu2026}
+\bibinfo{author}{Lyu, M.}, \bibinfo{author}{Tan, A.H.P.}, \bibinfo{author}{Chen, S.H.}, \bibinfo{author}{El-Bouri, W.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Short-term operational coordination of china's water-energy-food nexus via multiagent reinforcement learning}.
+\newblock \bibinfo{journal}{IEEE Systems Journal} \DOIprefix\doi{10.1109/JSYST.2026.3699576}.
+%Type = Article
+\bibitem[{Mei et~al.(2026)Mei, Zhang, Jiang, Xue, Zhang and Gao}]{mei2026}
+\bibinfo{author}{Mei, Z.}, \bibinfo{author}{Zhang, Y.}, \bibinfo{author}{Jiang, H.}, \bibinfo{author}{Xue, Y.}, \bibinfo{author}{Zhang, J.}, \bibinfo{author}{Gao, D.W.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Multi-agent heterogeneous graph reinforcement learning for electric vehicle routing and charging scheduling in coupled power-transportation networks}.
+\newblock \bibinfo{journal}{Applied Energy} \bibinfo{volume}{403}, \bibinfo{pages}{126958}.
+\newblock \DOIprefix\doi{10.1016/j.apenergy.2025.126958}.
+%Type = Article
+\bibitem[{Memarzadeh et~al.(2019)Memarzadeh, Moura and Horvath}]{memarzadeh2019}
+\bibinfo{author}{Memarzadeh, M.}, \bibinfo{author}{Moura, S.}, \bibinfo{author}{Horvath, A.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Optimizing dynamics of integrated food--energy--water systems under the risk of climate change}.
+\newblock \bibinfo{journal}{Environmental Research Letters} \bibinfo{volume}{14}, \bibinfo{pages}{074010}.
+\newblock \DOIprefix\doi{10.1088/1748-9326/ab2104}.
+%Type = Misc
+\bibitem[{Meng(2015)}]{Meng2015NingxiaIrrigation}
+\bibinfo{author}{Meng, Y.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Water-conservancy development in ningxia during the twelfth five-year plan}.
+\newblock \URLprefix \url{https://www.chinawater.com.cn/newscenter/df/nx/201512/t20151228_412242.html}.
+%Type = Misc
+\bibitem[{{NASA Langley Research Center}(2026)}]{NASAPOWER}
+\bibinfo{author}{{NASA Langley Research Center}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Prediction of worldwide energy resources ({POWER}) monthly and annual application programming interface}.
+\newblock \URLprefix \url{https://power.larc.nasa.gov/docs/services/api/temporal/monthly/}. \bibinfo{note}{accessed 19 August 2026}.
+%Type = Misc
+\bibitem[{{National Energy Administration of China}(2018)}]{LongyangxiaNEA2018}
+\bibinfo{author}{{National Energy Administration of China}}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Longyangxia hydropower station reaches its normal storage level for the first time in 31 years}.
+\newblock \URLprefix \url{https://obor.nea.gov.cn/detail/6852.html}.
+%Type = Misc
+\bibitem[{{Ningxia Hui Autonomous Region Bureau of Statistics}(2001--2022)}]{NingxiaStatisticalYearbooks}
+\bibinfo{author}{{Ningxia Hui Autonomous Region Bureau of Statistics}}, \bibinfo{year}{2001--2022}.
+\newblock \bibinfo{title}{Ningxia statistical yearbooks, 2001--2021 editions}.
+\newblock \URLprefix \url{https://www.nx.gov.cn/zwgk/zfxxgk/fdzdgknr/tjxx_40901/tjnj/index.html}.
+%Type = Article
+\bibitem[{Niu et~al.(2026)Niu, He, Chen and Liu}]{Niu2026YellowRiverWEFResilience}
+\bibinfo{author}{Niu, X.}, \bibinfo{author}{He, Z.}, \bibinfo{author}{Chen, Y.}, \bibinfo{author}{Liu, Y.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Decrypting water-energy-food nexus resilience in the yellow river basin: Spatiotemporal evolution, internal obstacles, and external drivers}.
+\newblock \bibinfo{journal}{Journal of Cleaner Production} \bibinfo{volume}{542}, \bibinfo{pages}{147527}.
+\newblock \DOIprefix\doi{10.1016/j.jclepro.2026.147527}.
+%Type = Inproceedings
+\bibitem[{Niu et~al.(2021)Niu, Paleja and Gombolay}]{niu2021}
+\bibinfo{author}{Niu, Y.}, \bibinfo{author}{Paleja, R.}, \bibinfo{author}{Gombolay, M.C.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Multi-agent graph-attention communication and teaming}, in: \bibinfo{booktitle}{Proceedings of the 20th International Conference on Autonomous Agents and MultiAgent Systems}, pp. \bibinfo{pages}{964--973}.
+\newblock \DOIprefix\doi{10.5555/3463952.3464065}.
+%Type = Article
+\bibitem[{Ocaranza et~al.(2024)Ocaranza, S{\'a}ez, Daniele and Ahumada}]{ocaranza2024}
+\bibinfo{author}{Ocaranza, J.}, \bibinfo{author}{S{\'a}ez, D.}, \bibinfo{author}{Daniele, L.}, \bibinfo{author}{Ahumada, C.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Energy--water management system based on robust predictive control for open-field cultivation}.
+\newblock \bibinfo{journal}{Science of the Total Environment} \bibinfo{volume}{946}, \bibinfo{pages}{174241}.
+\newblock \DOIprefix\doi{10.1016/j.scitotenv.2024.174241}.
+%Type = Misc
+\bibitem[{{People's Government of Hongsibu District}(2025)}]{Hongsibu2025Pumping}
+\bibinfo{author}{{People's Government of Hongsibu District}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Yellow river lift-irrigation project in hongsibu}.
+\newblock \URLprefix \url{https://www.hongsibu.gov.cn/zjhsb/lyjd/202305/t20230505_4053085.html}.
+%Type = Article
+\bibitem[{Ren et~al.(2022)Ren, Liu, Zhang, Li, Pan, Zhou and Xu}]{Ren2022YellowRiverWEFC}
+\bibinfo{author}{Ren, H.}, \bibinfo{author}{Liu, B.}, \bibinfo{author}{Zhang, Z.}, \bibinfo{author}{Li, F.}, \bibinfo{author}{Pan, K.}, \bibinfo{author}{Zhou, Z.}, \bibinfo{author}{Xu, X.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{A water-energy-food-carbon nexus optimization model for sustainable agricultural development in the yellow river basin under uncertainty}.
+\newblock \bibinfo{journal}{Applied Energy} \bibinfo{volume}{326}, \bibinfo{pages}{120008}.
+\newblock \DOIprefix\doi{10.1016/j.apenergy.2022.120008}.
+%Type = Article
+\bibitem[{Saint~Bois et~al.(2024)Saint~Bois, Boix and Montastruc}]{SaintBois2024WEFMultiActor}
+\bibinfo{author}{Saint~Bois, A.}, \bibinfo{author}{Boix, M.}, \bibinfo{author}{Montastruc, L.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Multi-actor integrated modeling approaches in the context of water-energy-food nexus systems: Review}.
+\newblock \bibinfo{journal}{Computers \& Chemical Engineering} \bibinfo{volume}{182}, \bibinfo{pages}{108559}.
+\newblock \DOIprefix\doi{10.1016/j.compchemeng.2023.108559}.
+%Type = Article
+\bibitem[{Schulman et~al.(2015)Schulman, Moritz, Levine, Jordan and Abbeel}]{schulman2016gae}
+\bibinfo{author}{Schulman, J.}, \bibinfo{author}{Moritz, P.}, \bibinfo{author}{Levine, S.}, \bibinfo{author}{Jordan, M.I.}, \bibinfo{author}{Abbeel, P.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{High-dimensional continuous control using generalized advantage estimation}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1506.02438} \DOIprefix\doi{10.48550/arXiv.1506.02438}.
+%Type = Article
+\bibitem[{Schulman et~al.(2017)Schulman, Wolski, Dhariwal, Radford and Klimov}]{schulman2017ppo}
+\bibinfo{author}{Schulman, J.}, \bibinfo{author}{Wolski, F.}, \bibinfo{author}{Dhariwal, P.}, \bibinfo{author}{Radford, A.}, \bibinfo{author}{Klimov, O.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Proximal policy optimization algorithms}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1707.06347} \DOIprefix\doi{10.48550/arXiv.1707.06347}.
+%Type = Misc
+\bibitem[{Shen et~al.(2022)Shen, Nielsen, Revel, Liu and Yamazaki}]{Shen2022ResCNDataset}
+\bibinfo{author}{Shen, Y.}, \bibinfo{author}{Nielsen, K.}, \bibinfo{author}{Revel, M.}, \bibinfo{author}{Liu, D.}, \bibinfo{author}{Yamazaki, D.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{A dataset for reservoir-catchment characteristics for 3254 chinese reservoirs, i.e., {Res-CN}}.
+\newblock \bibinfo{howpublished}{Zenodo dataset}.
+\newblock \DOIprefix\doi{10.5281/zenodo.7664489}.
+%Type = Article
+\bibitem[{Shen et~al.(2023)Shen, Nielsen, Revel, Liu and Yamazaki}]{Shen2023ResCN}
+\bibinfo{author}{Shen, Y.}, \bibinfo{author}{Nielsen, K.}, \bibinfo{author}{Revel, M.}, \bibinfo{author}{Liu, D.}, \bibinfo{author}{Yamazaki, D.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{{Res-CN} (reservoir dataset in china): Hydrometeorological time series and landscape attributes across 3254 chinese reservoirs}.
+\newblock \bibinfo{journal}{Earth System Science Data} \bibinfo{volume}{15}, \bibinfo{pages}{2781--2808}.
+\newblock \DOIprefix\doi{10.5194/essd-15-2781-2023}.
+%Type = Article
+\bibitem[{Si et~al.(2019)Si, Li, Yin, Li, Cai, Wei and Wang}]{si2019}
+\bibinfo{author}{Si, Y.}, \bibinfo{author}{Li, X.}, \bibinfo{author}{Yin, D.}, \bibinfo{author}{Li, T.}, \bibinfo{author}{Cai, X.}, \bibinfo{author}{Wei, J.}, \bibinfo{author}{Wang, G.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Revealing the water-energy-food nexus in the upper yellow river basin through multi-objective optimization for reservoir system}.
+\newblock \bibinfo{journal}{Science of the Total Environment} \bibinfo{volume}{682}, \bibinfo{pages}{1--18}.
+\newblock \DOIprefix\doi{10.1016/j.scitotenv.2019.04.427}.
+%Type = Article
+\bibitem[{Sun et~al.(2021)Sun, Jiang, Mudunuru and Chen}]{Sun2021HydrologyGNN}
+\bibinfo{author}{Sun, A.Y.}, \bibinfo{author}{Jiang, P.}, \bibinfo{author}{Mudunuru, M.K.}, \bibinfo{author}{Chen, X.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Explore spatio-temporal learning of large sample hydrology using graph neural networks}.
+\newblock \bibinfo{journal}{Water Resources Research} \bibinfo{volume}{57}, \bibinfo{pages}{e2021WR030394}.
+\newblock \DOIprefix\doi{10.1029/2021WR030394}.
+%Type = Article
+\bibitem[{Truong et~al.(2024)Truong, Tello, Lazovik and Degeler}]{Truong2024WDNGNN}
+\bibinfo{author}{Truong, H.}, \bibinfo{author}{Tello, A.}, \bibinfo{author}{Lazovik, A.}, \bibinfo{author}{Degeler, V.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Graph neural networks for pressure estimation in water distribution systems}.
+\newblock \bibinfo{journal}{Water Resources Research} \bibinfo{volume}{60}, \bibinfo{pages}{e2023WR036741}.
+\newblock \DOIprefix\doi{10.1029/2023WR036741}.
+%Type = Inproceedings
+\bibitem[{Veli\v{c}kovi\'c et~al.(2018)Veli\v{c}kovi\'c, Cucurull, Casanova, Romero, Li\`o and Bengio}]{velickovic2018}
+\bibinfo{author}{Veli\v{c}kovi\'c, P.}, \bibinfo{author}{Cucurull, G.}, \bibinfo{author}{Casanova, A.}, \bibinfo{author}{Romero, A.}, \bibinfo{author}{Li\`o, P.}, \bibinfo{author}{Bengio, Y.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Graph attention networks}, in: \bibinfo{booktitle}{International Conference on Learning Representations}.
+\newblock \URLprefix \url{https://openreview.net/forum?id=rJXMpikCZ}.
+%Type = Article
+\bibitem[{Wang et~al.(2025)Wang, Song, Li and Jiang}]{Wang2025YellowRiverWEFDrivers}
+\bibinfo{author}{Wang, Y.}, \bibinfo{author}{Song, J.}, \bibinfo{author}{Li, Q.}, \bibinfo{author}{Jiang, X.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Exploration of the development of water-energy-food nexus and its endogenous and exogenous drivers in the yellow river basin, china}.
+\newblock \bibinfo{journal}{Journal of Environmental Management} \bibinfo{volume}{378}, \bibinfo{pages}{124735}.
+\newblock \DOIprefix\doi{10.1016/j.jenvman.2025.124735}.
+%Type = Article
+\bibitem[{Wu et~al.(2025)Wu, Huang, He and Liu}]{wu2025}
+\bibinfo{author}{Wu, F.}, \bibinfo{author}{Huang, D.}, \bibinfo{author}{He, Z.}, \bibinfo{author}{Liu, S.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Water competition and drivers for energy-food production in the yellow river basin under rigid water resource constraints}.
+\newblock \bibinfo{journal}{Agricultural Water Management} \bibinfo{volume}{322}, \bibinfo{pages}{109961}.
+\newblock \DOIprefix\doi{10.1016/j.agwat.2025.109961}.
+%Type = Article
+\bibitem[{Wu et~al.(2024)Wu, Wang, Hao, Wu and Wang}]{Wu2024TransformerDRLReservoir}
+\bibinfo{author}{Wu, R.}, \bibinfo{author}{Wang, R.}, \bibinfo{author}{Hao, J.}, \bibinfo{author}{Wu, Q.}, \bibinfo{author}{Wang, P.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Multiobjective multihydropower reservoir operation optimization with transformer-based deep reinforcement learning}.
+\newblock \bibinfo{journal}{Journal of Hydrology} \bibinfo{volume}{632}, \bibinfo{pages}{130904}.
+\newblock \DOIprefix\doi{10.1016/j.jhydrol.2024.130904}.
+%Type = Article
+\bibitem[{Xie et~al.(2026)Xie, Ren, Xu, Zhang, Zhu, Li, Zhang and Wang}]{Xie2026LongHorizonReservoirDRL}
+\bibinfo{author}{Xie, Z.}, \bibinfo{author}{Ren, M.}, \bibinfo{author}{Xu, W.}, \bibinfo{author}{Zhang, T.}, \bibinfo{author}{Zhu, B.}, \bibinfo{author}{Li, D.}, \bibinfo{author}{Zhang, S.}, \bibinfo{author}{Wang, J.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Deep reinforcement learning for long-horizon reservoir operation: Temporal horizon, state representation, and hydrological data synthesis}.
+\newblock \bibinfo{journal}{Journal of Hydrology} \bibinfo{volume}{673}, \bibinfo{pages}{135421}.
+\newblock \DOIprefix\doi{10.1016/j.jhydrol.2026.135421}.
+%Type = Article
+\bibitem[{Xu et~al.(2020)Xu, Zhang, Peng and Liang}]{Xu2020CascadedReservoirDRL}
+\bibinfo{author}{Xu, W.}, \bibinfo{author}{Zhang, X.}, \bibinfo{author}{Peng, A.}, \bibinfo{author}{Liang, Y.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Deep reinforcement learning for cascaded hydropower reservoirs considering inflow forecasts}.
+\newblock \bibinfo{journal}{Water Resources Management} \bibinfo{volume}{34}, \bibinfo{pages}{3003--3018}.
+\newblock \DOIprefix\doi{10.1007/s11269-020-02600-w}.
+%Type = Misc
+\bibitem[{Yin(2020)}]{Yin2020YellowRiverDataset}
+\bibinfo{author}{Yin, Z.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Irrigation, damming, and streamflow fluctuations of the yellow river: Code and data}.
+\newblock \bibinfo{howpublished}{Zenodo dataset}.
+\newblock \DOIprefix\doi{10.5281/zenodo.3979053}.
+%Type = Article
+\bibitem[{Yin et~al.(2021)Yin, Ottl{\'e}, Ciais, Zhou, Wang, Polcher, Dumas, Peng, Li, Zhou, Bo, Xi and Piao}]{Yin2021YellowRiver}
+\bibinfo{author}{Yin, Z.}, \bibinfo{author}{Ottl{\'e}, C.}, \bibinfo{author}{Ciais, P.}, \bibinfo{author}{Zhou, F.}, \bibinfo{author}{Wang, X.}, \bibinfo{author}{Polcher, J.}, \bibinfo{author}{Dumas, P.}, \bibinfo{author}{Peng, S.}, \bibinfo{author}{Li, L.}, \bibinfo{author}{Zhou, X.}, \bibinfo{author}{Bo, Y.}, \bibinfo{author}{Xi, Y.}, \bibinfo{author}{Piao, S.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Irrigation, damming, and streamflow fluctuations of the yellow river}.
+\newblock \bibinfo{journal}{Hydrology and Earth System Sciences} \bibinfo{volume}{25}, \bibinfo{pages}{1133--1150}.
+\newblock \DOIprefix\doi{10.5194/hess-25-1133-2021}.
+%Type = Inproceedings
+\bibitem[{Yu et~al.(2022)Yu, Velu, Vinitsky, Gao, Wang, Bayen and Wu}]{yu2022}
+\bibinfo{author}{Yu, C.}, \bibinfo{author}{Velu, A.}, \bibinfo{author}{Vinitsky, E.}, \bibinfo{author}{Gao, J.}, \bibinfo{author}{Wang, Y.}, \bibinfo{author}{Bayen, A.}, \bibinfo{author}{Wu, Y.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{The surprising effectiveness of {PPO} in cooperative multi-agent games}, in: \bibinfo{booktitle}{Advances in Neural Information Processing Systems}.
+\newblock \URLprefix \url{https://arxiv.org/abs/2103.01955}.
+%Type = Article
+\bibitem[{Zanutto et~al.(2025)Zanutto, Ficch{\`i}, Giuliani and Castelletti}]{Zanutto2025ForecastRL}
+\bibinfo{author}{Zanutto, D.}, \bibinfo{author}{Ficch{\`i}, A.}, \bibinfo{author}{Giuliani, M.}, \bibinfo{author}{Castelletti, A.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Reinforcement learning of multi-timescale forecast information for designing operating policies of multi-purpose reservoirs}.
+\newblock \bibinfo{journal}{Water Resources Research} \bibinfo{volume}{61}, \bibinfo{pages}{e2023WR036724}.
+\newblock \DOIprefix\doi{10.1029/2023WR036724}.
+%Type = Article
+\bibitem[{Zhang et~al.(2018)Zhang, Chen, Li, Ding and Fu}]{zhang2018concepts}
+\bibinfo{author}{Zhang, C.}, \bibinfo{author}{Chen, X.}, \bibinfo{author}{Li, Y.}, \bibinfo{author}{Ding, W.}, \bibinfo{author}{Fu, G.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Water-energy-food nexus: Concepts, questions and methodologies}.
+\newblock \bibinfo{journal}{Journal of Cleaner Production} \bibinfo{volume}{195}, \bibinfo{pages}{625--639}.
+\newblock \DOIprefix\doi{10.1016/j.jclepro.2018.05.194}.
+%Type = Article
+\bibitem[{Zhang et~al.(2024)Zhang, Zhao and Shi}]{Zhang2024YellowRiverWEFEfficiency}
+\bibinfo{author}{Zhang, C.}, \bibinfo{author}{Zhao, X.}, \bibinfo{author}{Shi, C.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Efficiency assessment and scenario simulation of the water-energy-food system in the yellow river basin, china}.
+\newblock \bibinfo{journal}{Energy} \bibinfo{volume}{305}, \bibinfo{pages}{132279}.
+\newblock \DOIprefix\doi{10.1016/j.energy.2024.132279}.
+%Type = Misc
+\bibitem[{Zhang(2021)}]{Zhang2021Longyangxia}
+\bibinfo{author}{Zhang, D.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Longyangxia hydropower station: Technical data}.
+\newblock \URLprefix \url{https://www.yrcti.edu.cn/slgcxy/info/1057/5306.htm}.
+%Type = Article
+\bibitem[{Zhang et~al.(2020)Zhang, Tan, Yu and Zhang}]{Zhang2020WEFSynergy}
+\bibinfo{author}{Zhang, T.}, \bibinfo{author}{Tan, Q.}, \bibinfo{author}{Yu, X.}, \bibinfo{author}{Zhang, S.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Synergy assessment and optimization for water-energy-food nexus: Modeling and application}.
+\newblock \bibinfo{journal}{Renewable and Sustainable Energy Reviews} \bibinfo{volume}{134}, \bibinfo{pages}{110059}.
+\newblock \DOIprefix\doi{10.1016/j.rser.2020.110059}.
+%Type = Inproceedings
+\bibitem[{Z{\'u}{\~n}iga-Bauerle et~al.(2025)Z{\'u}{\~n}iga-Bauerle, Cartagena, Ocaranza, Daniele, Orchard and S{\'a}ez}]{zuniga2025}
+\bibinfo{author}{Z{\'u}{\~n}iga-Bauerle, C.}, \bibinfo{author}{Cartagena, O.}, \bibinfo{author}{Ocaranza, J.}, \bibinfo{author}{Daniele, L.}, \bibinfo{author}{Orchard, M.}, \bibinfo{author}{S{\'a}ez, D.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{A novel sustainable approach of reinforcement learning control for a water--energy--food microgrid}, in: \bibinfo{booktitle}{2025 IEEE Latin American Conference on Computational Intelligence (LA-CCI)}, pp. \bibinfo{pages}{1--6}.
+\newblock \DOIprefix\doi{10.1109/LA-CCI66231.2025.11270463}.
+
+\end{thebibliography}

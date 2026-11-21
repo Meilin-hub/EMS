@@ -1,0 +1,56 @@
+{
+  "source": "/Users/maylinlyu/Documents/PHD/p4/code1/latex1/cas-dc-sample.tex",
+  "manuscript_title": "Graph Reinforcement Learning for Water-Energy-Food System under Observation Delays",
+  "cover_letter_paragraphs": [
+    "Please consider our manuscript, \"Graph Reinforcement Learning for Water-Energy-Food System under Observation Delays\", for publication as a Research Paper in Journal of Hydrology.",
+    "Delayed observations can compromise reservoir releases and irrigation allocation across interconnected water, energy and food systems. We address this problem in the Upper Yellow River by coupling a heterogeneous graph neural network with proximal policy optimization. The graph represents 24 connected entities, while a deterministic execution layer enforces reservoir, channel, diversion and pumping-energy constraints. Monthly data from 2001 to 2021 support training, validation and evaluation over separate periods.",
+    "In the held-out evaluation, the graph policy achieved an approximately 6.2% lower average water-energy-food penalty than conventional proximal policy optimization across uniform observation delays of one to five months (p = 0.027). Performance without delays was statistically comparable. The graph policy maintained near-baseline performance under the tested delays, but single-node analysis identified the Hetao diversion interface as the most delay-sensitive location, indicating a priority for timely monitoring.",
+    "The manuscript fits Journal of Hydrology through its focus on basin-scale water resources operation and the links among reservoir regulation, irrigation supply, pumping energy and downstream flow. It offers a framework for assessing how information delays affect coupled river systems and where monitoring improvements may most benefit operational robustness. These questions are relevant to other regulated basins with observations reported at different times."
+  ],
+  "cover_letter_body_words": 221,
+  "highlights": [
+    {
+      "text": "A 24-node graph links water, energy and food systems in the Upper Yellow River.",
+      "characters_with_spaces": 79,
+      "with_bullet_and_space": 81
+    },
+    {
+      "text": "Physical constraints keep reservoir releases and irrigation diversions feasible.",
+      "characters_with_spaces": 80,
+      "with_bullet_and_space": 82
+    },
+    {
+      "text": "Graph control cuts average penalties by 6.2% versus a standard policy under delays.",
+      "characters_with_spaces": 83,
+      "with_bullet_and_space": 85
+    },
+    {
+      "text": "System performance stays near baseline with observation delays up to five months.",
+      "characters_with_spaces": 81,
+      "with_bullet_and_space": 83
+    },
+    {
+      "text": "The Hetao diversion interface is most sensitive to delayed observations.",
+      "characters_with_spaces": 72,
+      "with_bullet_and_space": 74
+    }
+  ],
+  "files": [
+    "/Users/maylinlyu/Documents/PHD/p4/code1/latex1/output/submission/Journal_of_Hydrology_Cover_Letter.docx",
+    "/Users/maylinlyu/Documents/PHD/p4/code1/latex1/output/submission/Journal_of_Hydrology_Highlights.docx"
+  ],
+  "reference_sha256": "d3006f9074e46823d103fe283be19901f55f75c19811558455d7a16c61797355",
+  "claims": {
+    "method": "Introduction and sections 2-3",
+    "6.2_percent": "Abstract, Table 2 and Conclusions",
+    "held_out_period": "Section 3.2 Training and evaluation procedure",
+    "delay_robustness": "Experiments 2-3",
+    "Hetao_interface": "Experiment 3, Fig. 5"
+  },
+  "journal_sources": [
+    "https://www.elsevier.com/researcher/author/tools-and-resources/highlights",
+    "https://www.elsevier.support/publishing/answer/what-should-be-included-in-a-cover-letter",
+    "https://shop.elsevier.com/journals/journal-of-hydrology/0022-1694"
+  ],
+  "guide_access": "ScienceDirect guide blocked by human verification; publisher guidance and official scope verified."
+}

@@ -1,0 +1,21 @@
+{
+  "manuscript_pages": 21,
+  "continuous_line_numbers": {
+    "first": 1,
+    "last": 993,
+    "gaps": 0,
+    "duplicates": 0
+  },
+  "reference_count": 57,
+  "reference_style": "author-year",
+  "reference_sort": "alphabetical by author",
+  "word_documents": {
+    "Abstract": 1,
+    "Cover_Letter": 2,
+    "Highlights": 1,
+    "Declaration_of_Competing_Interest": 1
+  },
+  "original_docx_text_preserved": true,
+  "declaration_assumption": "No competing interests; author confirmation pending",
+  "visual_review": "All Word pages and LaTeX page contact sheets inspected; detailed manuscript pages checked."
+}

@@ -1,0 +1,80 @@
+{
+  "input": "/Users/maylinlyu/Documents/PHD/p4/code1/latex1/output/submission/Journal_of_Hydrology_Cover_Letter.docx",
+  "fonts_by_char_count": {
+    "Garamond": 1981
+  },
+  "direct_run_formatting_runs": 15,
+  "direct_paragraph_formatting_paragraphs": 13,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 1,
+      "text": "COVER LETTER",
+      "style": "Title"
+    },
+    {
+      "para_index": 3,
+      "text": "Date: 9 September 2026",
+      "style": "normal"
+    }
+  ],
+  "examples": {
+    "direct_run_formatting": [
+      {
+        "para_index": 1,
+        "run_text": "COVER LETTER",
+        "style": "Title"
+      },
+      {
+        "para_index": 2,
+        "run_text": "To: The Editors, Journal of Hydrology",
+        "style": "normal"
+      },
+      {
+        "para_index": 3,
+        "run_text": "Date: 9 September 2026",
+        "style": "normal"
+      },
+      {
+        "para_index": 4,
+        "run_text": "Dear Editors,",
+        "style": "normal"
+      },
+      {
+        "para_index": 5,
+        "run_text": "Please consider our manuscript, \"Graph Reinforcement Learning for Water-Energy-F",
+        "style": "normal"
+      }
+    ],
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 5,
+        "text": "Please consider our manuscript, \"Graph Reinforcement Learning for Water-Energy-Food System under Observation Delays\", fo",
+        "style": "normal"
+      },
+      {
+        "para_index": 6,
+        "text": "Delayed observations can compromise reservoir releases and irrigation allocation across interconnected water, energy and",
+        "style": "normal"
+      },
+      {
+        "para_index": 7,
+        "text": "In the held-out evaluation, the graph policy achieved an approximately 6.2% lower average water-energy-food penalty than",
+        "style": "normal"
+      },
+      {
+        "para_index": 8,
+        "text": "The manuscript fits Journal of Hydrology through its focus on basin-scale water resources operation and the links among ",
+        "style": "normal"
+      },
+      {
+        "para_index": 10,
+        "text": "Sincerely,",
+        "style": "normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}

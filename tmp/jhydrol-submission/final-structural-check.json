@@ -1,0 +1,29 @@
+{
+  "Journal_of_Hydrology_Cover_Letter.docx": {
+    "page_geometry": "Letter, 1-inch margins, unchanged",
+    "changed_package_parts": [
+      "word/header1.xml",
+      "word/settings.xml",
+      "word/document.xml"
+    ],
+    "characters": null,
+    "bytes": 592478
+  },
+  "Journal_of_Hydrology_Highlights.docx": {
+    "page_geometry": "Letter, 1-inch margins, unchanged",
+    "changed_package_parts": [
+      "word/header1.xml",
+      "word/numbering.xml",
+      "word/settings.xml",
+      "word/document.xml"
+    ],
+    "characters": [
+      79,
+      80,
+      83,
+      81,
+      72
+    ],
+    "bytes": 591908
+  }
+}

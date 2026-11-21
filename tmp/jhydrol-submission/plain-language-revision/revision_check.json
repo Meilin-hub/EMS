@@ -1,0 +1,30 @@
+{
+  "bullets": [
+    {
+      "text": "A learning model links reservoirs, power and crops to guide water allocation.",
+      "characters_including_spaces": 77
+    },
+    {
+      "text": "The model outperforms a standard learning model when monitoring data arrive late.",
+      "characters_including_spaces": 81
+    },
+    {
+      "text": "Model performance barely changes with data up to five months out of date.",
+      "characters_including_spaces": 73
+    },
+    {
+      "text": "Hetao's water diversion point is most sensitive to delayed monitoring data.",
+      "characters_including_spaces": 75
+    },
+    {
+      "text": "The results pinpoint where faster monitoring could most benefit water management.",
+      "characters_including_spaces": 81
+    }
+  ],
+  "source_backup": "/Users/maylinlyu/Documents/PHD/p4/code1/latex1/tmp/jhydrol-submission/plain-language-revision/Highlights_before_rewrite.docx",
+  "output": "/Users/maylinlyu/Documents/PHD/p4/code1/latex1/output/submission/Journal_of_Hydrology_Highlights.docx",
+  "changed_parts": [
+    "word/document.xml"
+  ],
+  "rationale": "Plain wording for physical connections, comparison, five-month delay robustness, vulnerable diversion point and monitoring priorities; no unverified conversion of penalty reduction to water savings."
+}

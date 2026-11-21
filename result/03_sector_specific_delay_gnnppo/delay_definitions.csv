@@ -1,0 +1,137 @@
+delay_scenario,scenario_type,delayed_sector,delayed_node,delay_months,n_delayed_nodes,delayed_nodes,definition
+tau0,reference,all,,0,24,W1;W2;W3;W4;W5;W6;W7;W8;W9;E1;E2;E3;E4;E5;E6;E7;E8;E9;F1;F2;F3;F4;F5;F6,All 24 nodes use current-month observations.
+sector_water_tau1,sector,water,,1,9,W1;W2;W3;W4;W5;W6;W7;W8;W9,"Only water nodes (W1, W2, W3, W4, W5, W6, W7, W8, W9) use 1-month-old observations; all other nodes use current-month observations."
+sector_water_tau2,sector,water,,2,9,W1;W2;W3;W4;W5;W6;W7;W8;W9,"Only water nodes (W1, W2, W3, W4, W5, W6, W7, W8, W9) use 2-month-old observations; all other nodes use current-month observations."
+sector_water_tau3,sector,water,,3,9,W1;W2;W3;W4;W5;W6;W7;W8;W9,"Only water nodes (W1, W2, W3, W4, W5, W6, W7, W8, W9) use 3-month-old observations; all other nodes use current-month observations."
+sector_water_tau4,sector,water,,4,9,W1;W2;W3;W4;W5;W6;W7;W8;W9,"Only water nodes (W1, W2, W3, W4, W5, W6, W7, W8, W9) use 4-month-old observations; all other nodes use current-month observations."
+sector_water_tau5,sector,water,,5,9,W1;W2;W3;W4;W5;W6;W7;W8;W9,"Only water nodes (W1, W2, W3, W4, W5, W6, W7, W8, W9) use 5-month-old observations; all other nodes use current-month observations."
+sector_energy_tau1,sector,energy,,1,9,E1;E2;E3;E4;E5;E6;E7;E8;E9,"Only energy nodes (E1, E2, E3, E4, E5, E6, E7, E8, E9) use 1-month-old observations; all other nodes use current-month observations."
+sector_energy_tau2,sector,energy,,2,9,E1;E2;E3;E4;E5;E6;E7;E8;E9,"Only energy nodes (E1, E2, E3, E4, E5, E6, E7, E8, E9) use 2-month-old observations; all other nodes use current-month observations."
+sector_energy_tau3,sector,energy,,3,9,E1;E2;E3;E4;E5;E6;E7;E8;E9,"Only energy nodes (E1, E2, E3, E4, E5, E6, E7, E8, E9) use 3-month-old observations; all other nodes use current-month observations."
+sector_energy_tau4,sector,energy,,4,9,E1;E2;E3;E4;E5;E6;E7;E8;E9,"Only energy nodes (E1, E2, E3, E4, E5, E6, E7, E8, E9) use 4-month-old observations; all other nodes use current-month observations."
+sector_energy_tau5,sector,energy,,5,9,E1;E2;E3;E4;E5;E6;E7;E8;E9,"Only energy nodes (E1, E2, E3, E4, E5, E6, E7, E8, E9) use 5-month-old observations; all other nodes use current-month observations."
+sector_food_tau1,sector,food,,1,6,F1;F2;F3;F4;F5;F6,"Only food nodes (F1, F2, F3, F4, F5, F6) use 1-month-old observations; all other nodes use current-month observations."
+sector_food_tau2,sector,food,,2,6,F1;F2;F3;F4;F5;F6,"Only food nodes (F1, F2, F3, F4, F5, F6) use 2-month-old observations; all other nodes use current-month observations."
+sector_food_tau3,sector,food,,3,6,F1;F2;F3;F4;F5;F6,"Only food nodes (F1, F2, F3, F4, F5, F6) use 3-month-old observations; all other nodes use current-month observations."
+sector_food_tau4,sector,food,,4,6,F1;F2;F3;F4;F5;F6,"Only food nodes (F1, F2, F3, F4, F5, F6) use 4-month-old observations; all other nodes use current-month observations."
+sector_food_tau5,sector,food,,5,6,F1;F2;F3;F4;F5;F6,"Only food nodes (F1, F2, F3, F4, F5, F6) use 5-month-old observations; all other nodes use current-month observations."
+node_W1_tau1,node,water,W1,1,1,W1,Only node W1 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_W1_tau2,node,water,W1,2,1,W1,Only node W1 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_W1_tau3,node,water,W1,3,1,W1,Only node W1 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_W1_tau4,node,water,W1,4,1,W1,Only node W1 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_W1_tau5,node,water,W1,5,1,W1,Only node W1 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_W2_tau1,node,water,W2,1,1,W2,Only node W2 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_W2_tau2,node,water,W2,2,1,W2,Only node W2 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_W2_tau3,node,water,W2,3,1,W2,Only node W2 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_W2_tau4,node,water,W2,4,1,W2,Only node W2 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_W2_tau5,node,water,W2,5,1,W2,Only node W2 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_W3_tau1,node,water,W3,1,1,W3,Only node W3 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_W3_tau2,node,water,W3,2,1,W3,Only node W3 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_W3_tau3,node,water,W3,3,1,W3,Only node W3 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_W3_tau4,node,water,W3,4,1,W3,Only node W3 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_W3_tau5,node,water,W3,5,1,W3,Only node W3 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_W4_tau1,node,water,W4,1,1,W4,Only node W4 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_W4_tau2,node,water,W4,2,1,W4,Only node W4 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_W4_tau3,node,water,W4,3,1,W4,Only node W4 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_W4_tau4,node,water,W4,4,1,W4,Only node W4 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_W4_tau5,node,water,W4,5,1,W4,Only node W4 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_W5_tau1,node,water,W5,1,1,W5,Only node W5 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_W5_tau2,node,water,W5,2,1,W5,Only node W5 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_W5_tau3,node,water,W5,3,1,W5,Only node W5 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_W5_tau4,node,water,W5,4,1,W5,Only node W5 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_W5_tau5,node,water,W5,5,1,W5,Only node W5 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_W6_tau1,node,water,W6,1,1,W6,Only node W6 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_W6_tau2,node,water,W6,2,1,W6,Only node W6 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_W6_tau3,node,water,W6,3,1,W6,Only node W6 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_W6_tau4,node,water,W6,4,1,W6,Only node W6 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_W6_tau5,node,water,W6,5,1,W6,Only node W6 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_W7_tau1,node,water,W7,1,1,W7,Only node W7 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_W7_tau2,node,water,W7,2,1,W7,Only node W7 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_W7_tau3,node,water,W7,3,1,W7,Only node W7 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_W7_tau4,node,water,W7,4,1,W7,Only node W7 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_W7_tau5,node,water,W7,5,1,W7,Only node W7 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_W8_tau1,node,water,W8,1,1,W8,Only node W8 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_W8_tau2,node,water,W8,2,1,W8,Only node W8 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_W8_tau3,node,water,W8,3,1,W8,Only node W8 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_W8_tau4,node,water,W8,4,1,W8,Only node W8 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_W8_tau5,node,water,W8,5,1,W8,Only node W8 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_W9_tau1,node,water,W9,1,1,W9,Only node W9 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_W9_tau2,node,water,W9,2,1,W9,Only node W9 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_W9_tau3,node,water,W9,3,1,W9,Only node W9 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_W9_tau4,node,water,W9,4,1,W9,Only node W9 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_W9_tau5,node,water,W9,5,1,W9,Only node W9 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_E1_tau1,node,energy,E1,1,1,E1,Only node E1 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_E1_tau2,node,energy,E1,2,1,E1,Only node E1 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_E1_tau3,node,energy,E1,3,1,E1,Only node E1 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_E1_tau4,node,energy,E1,4,1,E1,Only node E1 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_E1_tau5,node,energy,E1,5,1,E1,Only node E1 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_E2_tau1,node,energy,E2,1,1,E2,Only node E2 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_E2_tau2,node,energy,E2,2,1,E2,Only node E2 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_E2_tau3,node,energy,E2,3,1,E2,Only node E2 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_E2_tau4,node,energy,E2,4,1,E2,Only node E2 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_E2_tau5,node,energy,E2,5,1,E2,Only node E2 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_E3_tau1,node,energy,E3,1,1,E3,Only node E3 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_E3_tau2,node,energy,E3,2,1,E3,Only node E3 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_E3_tau3,node,energy,E3,3,1,E3,Only node E3 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_E3_tau4,node,energy,E3,4,1,E3,Only node E3 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_E3_tau5,node,energy,E3,5,1,E3,Only node E3 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_E4_tau1,node,energy,E4,1,1,E4,Only node E4 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_E4_tau2,node,energy,E4,2,1,E4,Only node E4 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_E4_tau3,node,energy,E4,3,1,E4,Only node E4 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_E4_tau4,node,energy,E4,4,1,E4,Only node E4 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_E4_tau5,node,energy,E4,5,1,E4,Only node E4 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_E5_tau1,node,energy,E5,1,1,E5,Only node E5 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_E5_tau2,node,energy,E5,2,1,E5,Only node E5 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_E5_tau3,node,energy,E5,3,1,E5,Only node E5 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_E5_tau4,node,energy,E5,4,1,E5,Only node E5 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_E5_tau5,node,energy,E5,5,1,E5,Only node E5 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_E6_tau1,node,energy,E6,1,1,E6,Only node E6 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_E6_tau2,node,energy,E6,2,1,E6,Only node E6 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_E6_tau3,node,energy,E6,3,1,E6,Only node E6 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_E6_tau4,node,energy,E6,4,1,E6,Only node E6 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_E6_tau5,node,energy,E6,5,1,E6,Only node E6 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_E7_tau1,node,energy,E7,1,1,E7,Only node E7 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_E7_tau2,node,energy,E7,2,1,E7,Only node E7 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_E7_tau3,node,energy,E7,3,1,E7,Only node E7 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_E7_tau4,node,energy,E7,4,1,E7,Only node E7 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_E7_tau5,node,energy,E7,5,1,E7,Only node E7 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_E8_tau1,node,energy,E8,1,1,E8,Only node E8 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_E8_tau2,node,energy,E8,2,1,E8,Only node E8 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_E8_tau3,node,energy,E8,3,1,E8,Only node E8 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_E8_tau4,node,energy,E8,4,1,E8,Only node E8 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_E8_tau5,node,energy,E8,5,1,E8,Only node E8 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_E9_tau1,node,energy,E9,1,1,E9,Only node E9 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_E9_tau2,node,energy,E9,2,1,E9,Only node E9 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_E9_tau3,node,energy,E9,3,1,E9,Only node E9 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_E9_tau4,node,energy,E9,4,1,E9,Only node E9 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_E9_tau5,node,energy,E9,5,1,E9,Only node E9 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_F1_tau1,node,food,F1,1,1,F1,Only node F1 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_F1_tau2,node,food,F1,2,1,F1,Only node F1 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_F1_tau3,node,food,F1,3,1,F1,Only node F1 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_F1_tau4,node,food,F1,4,1,F1,Only node F1 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_F1_tau5,node,food,F1,5,1,F1,Only node F1 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_F2_tau1,node,food,F2,1,1,F2,Only node F2 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_F2_tau2,node,food,F2,2,1,F2,Only node F2 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_F2_tau3,node,food,F2,3,1,F2,Only node F2 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_F2_tau4,node,food,F2,4,1,F2,Only node F2 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_F2_tau5,node,food,F2,5,1,F2,Only node F2 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_F3_tau1,node,food,F3,1,1,F3,Only node F3 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_F3_tau2,node,food,F3,2,1,F3,Only node F3 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_F3_tau3,node,food,F3,3,1,F3,Only node F3 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_F3_tau4,node,food,F3,4,1,F3,Only node F3 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_F3_tau5,node,food,F3,5,1,F3,Only node F3 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_F4_tau1,node,food,F4,1,1,F4,Only node F4 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_F4_tau2,node,food,F4,2,1,F4,Only node F4 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_F4_tau3,node,food,F4,3,1,F4,Only node F4 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_F4_tau4,node,food,F4,4,1,F4,Only node F4 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_F4_tau5,node,food,F4,5,1,F4,Only node F4 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_F5_tau1,node,food,F5,1,1,F5,Only node F5 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_F5_tau2,node,food,F5,2,1,F5,Only node F5 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_F5_tau3,node,food,F5,3,1,F5,Only node F5 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_F5_tau4,node,food,F5,4,1,F5,Only node F5 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_F5_tau5,node,food,F5,5,1,F5,Only node F5 uses a 5-month-old observation; the other 23 nodes use current-month observations.
+node_F6_tau1,node,food,F6,1,1,F6,Only node F6 uses a 1-month-old observation; the other 23 nodes use current-month observations.
+node_F6_tau2,node,food,F6,2,1,F6,Only node F6 uses a 2-month-old observation; the other 23 nodes use current-month observations.
+node_F6_tau3,node,food,F6,3,1,F6,Only node F6 uses a 3-month-old observation; the other 23 nodes use current-month observations.
+node_F6_tau4,node,food,F6,4,1,F6,Only node F6 uses a 4-month-old observation; the other 23 nodes use current-month observations.
+node_F6_tau5,node,food,F6,5,1,F6,Only node F6 uses a 5-month-old observation; the other 23 nodes use current-month observations.

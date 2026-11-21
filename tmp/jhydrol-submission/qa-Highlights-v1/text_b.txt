@@ -1,0 +1,6 @@
+HIGHLIGHTS
+A 24-node graph links water, energy and food systems in the Upper Yellow River.
+Physical constraints keep reservoir releases and irrigation diversions feasible.
+Graph control cuts penalties by 6.2% versus a standard policy under data delays.
+System performance stays near baseline with observation delays up to five months.
+The Hetao diversion interface is most sensitive to delayed observations.

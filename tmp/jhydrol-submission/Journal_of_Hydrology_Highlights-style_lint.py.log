@@ -1,0 +1,5 @@
+[style_lint] direct run-formatting runs: 6
+[style_lint] direct paragraph-formatting paragraphs: 8
+[style_lint] top fonts by char count: Garamond(405)
+[style_lint] heading-like paragraphs not using Heading styles (first 10):
+  - #1: style='Title' text='HIGHLIGHTS'

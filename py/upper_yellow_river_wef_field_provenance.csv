@@ -1,0 +1,47 @@
+﻿field_or_group,status,method,coverage,source,uncertainty
+W1 storage/loss,derived,Res-CN storage-change and evaporation series; absolute anomaly centered within physical bounds,2001-2021,https://doi.org/10.5281/zenodo.7664489 | https://essd.copernicus.org/articles/15/2781/2023/,medium
+W2 storage/loss,proxy/derived,HESS monthly regulation climatology plus Res-CN evaporation,2001-2021,https://doi.org/10.5281/zenodo.3979053 | https://doi.org/10.5281/zenodo.7664489,medium-high
+W1 inflow and W9 flow,observed+climatology,HESS gauge observations through 2014; 2001-2014 monthly climatology afterward,2001-2021,https://hess.copernicus.org/articles/25/1133/2021/ | https://doi.org/10.5281/zenodo.3979053,medium after 2014
+W3-W6 reach gains,calibrated proxy,W3 from reservoir balance; downstream aggregate residual split equally across W4-W6,12-month climatology,https://hess.copernicus.org/articles/25/1133/2021/ | https://slt.nx.gov.cn/xxgk_281/fdzdgknr/gbxx/szygb/ | https://www.mdpi.com/2073-4395/15/7/1654,high
+W9 ecological threshold,literature-derived,125 m3/s continuous minimum converted to 30-day volume,all months,https://doi.org/10.3390/ijerph182010956,medium
+Ningxia diversion/drainage,reported+derived,Official annual bulletins; totals divided uniformly by 12,2001-2021,https://slt.nx.gov.cn/xxgk_281/fdzdgknr/gbxx/szygb/,low annual / high monthly
+Ningxia irrigation efficiency,reported+interpolated,Published annual anchors with linear interpolation,2001-2021,https://www.chinawater.com.cn/newscenter/df/nx/201512/t20151228_412242.html,medium
+Hetao diversion/drainage,digitized+interpolated,Digitized Figure 6 annual points; short gaps interpolated,2001-2021,https://www.mdpi.com/2073-4395/15/7/1654,medium
+Hetao irrigation efficiency,scenario proxy,Linear 0.40 to reported 0.467/0.47 anchors,2001-2021,https://www.mdpi.com/2073-4395/15/7/1654,high
+Channel capacities,physical reference,750 and 565 m3/s converted to 30-day volumes,all months,https://slt.nx.gov.cn/slxc/gzdt/slyw/202104/t20210409_2733861.html | https://www.sciencedirect.com/science/article/pii/S037837742200508X,medium
+Reservoir head/beta/Rmax,physical derived,"Design head, installed capacity and 0.90 turbine efficiency",all months,https://obor.nea.gov.cn/detail/6852.html | https://www.yrcti.edu.cn/slgcxy/info/1057/5306.htm | https://hess.copernicus.org/articles/25/1133/2021/,medium
+Ningxia crop areas,reported+interpolated,Statistical-yearbook observations; missing years linearly interpolated/backcast,2001-2021,https://www.nx.gov.cn/zwgk/zfxxgk/fdzdgknr/tjxx_40901/tjnj/index.html | https://nxdata.com.cn/files_nx_pub/html/tjnj/,medium-high for interpolated years
+Hetao crop areas,digitized+interpolated,Digitized Figure 3; 2019-2020 interpolated,2001-2021,https://www.mdpi.com/2073-4395/15/7/1654,medium
+Crop water requirement/allocation,formula-derived,"TeX equations using area, FAO crop coefficients, ET0, effective precipitation and field supply",2001-2021,cas-dc-sample.tex | https://www.fao.org/4/X0490E/x0490e0b.htm,inherits inputs
+E3/E4/Lbase,scenario proxy,"1 GW climate-shaped renewable, 500 GWh/month import limit, 1000 GWh/month base load",2001-2021,NASA POWER climate + explicit scenario assumptions,high; replace for empirical study
+E8/E9 pump references,physical+engineering proxy,Ningxia 300 m/28 m3/s reference; Hetao 5 m aggregate lift proxy; efficiency 0.75,all months,https://www.hongsibu.gov.cn/zjhsb/lyjd/202305/t20230505_4053085.html | https://www.sciencedirect.com/science/article/pii/S037837742200508X,high for aggregate Hetao head
+W1_executed_release_R1 [1e8 m3 month-1],intentionally blank,policy/environment output,all months,algorithm/environment,not applicable
+E1_generation [GWh month-1],intentionally blank,derived after executed W1 release,all months,algorithm/environment,not applicable
+W2_inflow_I [1e8 m3 month-1],intentionally blank,derived from W1 release and W3 routing,all months,algorithm/environment,not applicable
+W2_executed_release_R2 [1e8 m3 month-1],intentionally blank,policy/environment output,all months,algorithm/environment,not applicable
+E2_generation [GWh month-1],intentionally blank,derived after executed W2 release,all months,algorithm/environment,not applicable
+W7_Ningxia_intake_available_Q [1e8 m3 month-1],intentionally blank,derived from upstream routing,all months,algorithm/environment,not applicable
+W8_Hetao_intake_available_Q [1e8 m3 month-1],intentionally blank,derived from upstream routing,all months,algorithm/environment,not applicable
+raw_policy_R1 [1e8 m3 month-1],intentionally blank,policy output,all months,algorithm/environment,not applicable
+raw_policy_R2 [1e8 m3 month-1],intentionally blank,policy output,all months,algorithm/environment,not applicable
+raw_policy_D_N [1e8 m3 month-1],intentionally blank,policy output,all months,algorithm/environment,not applicable
+raw_policy_D_H [1e8 m3 month-1],intentionally blank,policy output,all months,algorithm/environment,not applicable
+E4_grid_import [GWh month-1],intentionally blank,grid dispatch output,all months,algorithm/environment,not applicable
+E5_residual_energy [GWh month-1],intentionally blank,derived after hydropower/import decisions,all months,algorithm/environment,not applicable
+E5_curtailment [GWh month-1],intentionally blank,grid-clearing output,all months,algorithm/environment,not applicable
+E5_unserved_energy [GWh month-1],intentionally blank,grid-clearing output,all months,algorithm/environment,not applicable
+E6_Ningxia_accepted_pump_demand [GWh month-1],intentionally blank,allocation output,all months,algorithm/environment,not applicable
+E6_Ningxia_allocated_supply [GWh month-1],intentionally blank,allocation output,all months,algorithm/environment,not applicable
+E6_Ningxia_shortfall [GWh month-1],intentionally blank,allocation output,all months,algorithm/environment,not applicable
+E7_Hetao_accepted_pump_demand [GWh month-1],intentionally blank,allocation output,all months,algorithm/environment,not applicable
+E7_Hetao_allocated_supply [GWh month-1],intentionally blank,allocation output,all months,algorithm/environment,not applicable
+E7_Hetao_shortfall [GWh month-1],intentionally blank,allocation output,all months,algorithm/environment,not applicable
+E8_Ningxia_executed_pumping [GWh month-1],intentionally blank,environment output,all months,algorithm/environment,not applicable
+E9_Hetao_executed_pumping [GWh month-1],intentionally blank,environment output,all months,algorithm/environment,not applicable
+reward_water_deficit_CW [1e8 m3 month-1],intentionally blank,reward calculation output,all months,algorithm/environment,not applicable
+reward_energy_deficit_CE [GWh month-1],intentionally blank,reward calculation output,all months,algorithm/environment,not applicable
+reward_food_deficit_CF [1e8 m3 month-1],intentionally blank,reward calculation output,all months,algorithm/environment,not applicable
+reward_weight_lambda_W [-],intentionally blank,experiment hyperparameter,all months,algorithm/environment,not applicable
+reward_weight_lambda_E [-],intentionally blank,experiment hyperparameter,all months,algorithm/environment,not applicable
+reward_weight_lambda_F [-],intentionally blank,experiment hyperparameter,all months,algorithm/environment,not applicable
+reward_r [-],intentionally blank,reward calculation output,all months,algorithm/environment,not applicable

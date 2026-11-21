@@ -1,0 +1,15 @@
+# Submission document template contract
+
+Reference: /Users/maylinlyu/.codex/plugins/cache/openai-curated-remote/openai-templates/0.1.1/skills/artifact-template-legal-memorandum/assets/reference.docx
+SHA256: d3006f9074e46823d103fe283be19901f55f75c19811558455d7a16c61797355
+Four rendered reference pages; one portrait Letter section. Evidence: template-render/page-1.png through page-4.png, template-style-evidence.json and template-package-inventory.json.
+
+Page system: 8.5 by 11 inches; margins 1 inch on all sides; header and footer distances 0.5 inch; single column; no distinct first-page or odd/even setup; page numbering starts at 1. Preserve sectPr byte-equivalent structure.
+Typography: direct Garamond 12 pt in body; justified with 1.5 line spacing and inherited 8 pt after. Metadata Garamond 12 pt, default 1.1583 line spacing, 8 pt after. Title Garamond bold 24 pt, centered, 8 pt after. No title rule. Footer right-aligned Garamond 12 pt PAGE field. No tables, images, content controls, footnotes or body fields. Header is a confidentiality placeholder, intentionally blank for journal submissions.
+Lists: original decimal numbering with left indent 1440 twips and hanging 360, line spacing 360. For the expressly requested Highlights bullet points, clone list paragraphs and add a bullet numbering definition, preserving original numbering definitions. Use the source hanging indent and Garamond 12 pt.
+
+Slot map (zero-based body paragraph index in word/document.xml): p1 title -> COVER LETTER or HIGHLIGHTS, add semantic Title style with direct source visual formatting; p3 To metadata -> journal editors; p6 Date -> 9 September 2026; p11 prose -> clone for manuscript request, method, main result and journal fit; p3 unlabelled text pattern -> salutation, closing and corresponding author details; p14 list item -> clone for five Highlights. Remove unused legal fact, analysis, governing authority and conclusion slots, optional blank paragraphs and Re rule: those purposes do not apply to requested cover letter and standalone highlights. Do not insert legal or confidentiality statements. Cover letter has title, To, Date, salutation, concise prose, close, correspondence block. Highlights has title and five bullets only.
+
+Preservation: clone the reference ZIP; edit only document.xml, header1.xml (blank unsupported confidentiality text), settings.xml (updateFields true), and numbering.xml (new Highlights bullet definition only). All other ZIP parts including styles, fonts, theme, footer, content types and relationships are preserve-only. Retain embedded Garamond fonts. Field refresh: preserve PAGE field; set updateFields true because no native Word refresh is used. Rendered footer must show 1 on each one-page output.
+
+Fidelity: keep geometry, Garamond, source title weight/size, list hang and footer. Content-driven page-count change from four pages to one is expected. Journal-specific text replaces all placeholders; shorter metadata and omission of legal headings/privilege label are necessary adaptations to requested artifact types. Inspect every final rendered page and compare preserve-only part hashes. Keep reference SHA unchanged.

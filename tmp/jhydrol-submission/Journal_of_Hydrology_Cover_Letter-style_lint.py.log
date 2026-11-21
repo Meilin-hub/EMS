@@ -1,0 +1,6 @@
+[style_lint] direct run-formatting runs: 15
+[style_lint] direct paragraph-formatting paragraphs: 13
+[style_lint] top fonts by char count: Garamond(1981)
+[style_lint] heading-like paragraphs not using Heading styles (first 10):
+  - #1: style='Title' text='COVER LETTER'
+  - #3: style='normal' text='Date: 9 September 2026'

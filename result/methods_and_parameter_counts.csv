@@ -1,0 +1,3 @@
+method,variant_key,architecture,trainable_parameters,description
+PPO,ppo,conventional PPO,46089,Conventional PPO trained with current observations.
+GNN-PPO,gnn_ppo,heterogeneous graph PPO,119049,Heterogeneous graph PPO trained with current observations.

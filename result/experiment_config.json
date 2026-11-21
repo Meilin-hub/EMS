@@ -1,0 +1,89 @@
+{
+  "data_path": "/Users/maylinlyu/Documents/PHD/p4/code1/latex1/py/filled.csv",
+  "result_dir": "/Users/maylinlyu/Documents/PHD/p4/code1/latex1/result",
+  "train_years": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015
+  ],
+  "validation_years": [
+    2016,
+    2017,
+    2018
+  ],
+  "test_years": [
+    2019,
+    2020,
+    2021
+  ],
+  "seeds": [
+    7,
+    42,
+    73,
+    101,
+    314,
+    509,
+    1234,
+    2026,
+    2718,
+    4096
+  ],
+  "feature_dim": 12,
+  "delay_levels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "device": "cpu",
+  "reward": {
+    "water": 1.0,
+    "energy": 0.35,
+    "food": 1.0,
+    "import_share": 0.25,
+    "terminal_storage": 1.0
+  },
+  "physical": {
+    "terminal_storage_target_fraction": 1.0
+  },
+  "ppo": {
+    "updates": 160,
+    "rollout_episodes": 4,
+    "update_epochs": 6,
+    "minibatch_size": 48,
+    "learning_rate": 0.0003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "value_coef": 0.5,
+    "entropy_coef": 0.01,
+    "max_grad_norm": 0.5,
+    "hidden_dim": 64,
+    "gnn_layers": 2
+  },
+  "validation": {
+    "interval_updates": 10,
+    "minimum_updates": 60,
+    "patience_checks": 5,
+    "minimum_improvement": 0.0001,
+    "delay_scenarios": [
+      "tau0",
+      "tau3",
+      "tau5"
+    ]
+  }
+}
